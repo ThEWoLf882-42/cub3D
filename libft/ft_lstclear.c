@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 17:49:11 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 10:28:36 by agimi            ###   ########.fr       */
+/*   Created: 2023/07/30 10:37:04 by agimi             #+#    #+#             */
+/*   Updated: 2023/07/30 10:40:18 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	ft_isspace(size_t c)
+void	clear_smap(t_smap **sma)
 {
-	if ((c == ' ' || c == '\t' || c == '\v'
-			|| c == '\n' || c == '\f' || c == '\r'))
-		return (1);
-	return (0);
-}
+	t_smap	*tsma;
 
-int	ft_sisspace(char *c)
-{
-	int	i;
-
-	if (!c)
-		return (1);
-	i = -1;
-	while (c[++i] && c[i] == ' ')
-		;
-	if (!c[i])
-		return (1);
-	return (0);
+	while (*sma)
+	{
+		tsma = (*sma)->nxt;
+		free((*sma)->s);
+		free(*sma);
+		*sma = tsma;
+	}
 }

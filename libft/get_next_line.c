@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 10:23:37 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 10:29:44 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 10:01:02 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*kra(int fd, char *naah)
 		ak = read(fd, buff, BUFFER_SIZE);
 		if (ak == -1)
 		{
+			free(buff);
 			free(naah);
 			naah = NULL;
 			break ;

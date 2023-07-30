@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 17:49:11 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 10:28:36 by agimi            ###   ########.fr       */
+/*   Created: 2023/07/30 09:14:36 by agimi             #+#    #+#             */
+/*   Updated: 2023/07/30 09:46:25 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	ft_isspace(size_t c)
+void	ft_lstadd_back_m(t_smap **a, t_smap *new)
 {
-	if ((c == ' ' || c == '\t' || c == '\v'
-			|| c == '\n' || c == '\f' || c == '\r'))
-		return (1);
-	return (0);
-}
-
-int	ft_sisspace(char *c)
-{
-	int	i;
-
-	if (!c)
-		return (1);
-	i = -1;
-	while (c[++i] && c[i] == ' ')
-		;
-	if (!c[i])
-		return (1);
-	return (0);
+	if (!a || !new)
+		return ;
+	if ((*a))
+		ft_lstlast_m((*a))->nxt = new;
+		// ft_lstlast_m(a)->perv = ft_lstplast_m(a);
+	else
+		(*a) = new;
+		// a->perv = NULL;
 }

@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 17:49:11 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 10:28:36 by agimi            ###   ########.fr       */
+/*   Created: 2023/07/30 09:20:12 by agimi             #+#    #+#             */
+/*   Updated: 2023/07/30 09:21:17 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	ft_isspace(size_t c)
+t_smap	*ft_lstnew_m(char *s)
 {
-	if ((c == ' ' || c == '\t' || c == '\v'
-			|| c == '\n' || c == '\f' || c == '\r'))
-		return (1);
-	return (0);
-}
+	t_smap	*new;
 
-int	ft_sisspace(char *c)
-{
-	int	i;
-
-	if (!c)
-		return (1);
-	i = -1;
-	while (c[++i] && c[i] == ' ')
-		;
-	if (!c[i])
-		return (1);
-	return (0);
+	new = malloc(sizeof(t_map));
+	if (!new)
+		return (NULL);
+	new->s = s;
+	new->nxt = NULL;
+	return (new);
 }

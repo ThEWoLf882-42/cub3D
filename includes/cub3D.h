@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 18:34:30 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 14:25:06 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <MLX42/MLX42.h>
+
+typedef struct smap
+{
+	char		*s;
+	struct smap	*nxt;
+}	t_smap;
 
 typedef struct map
 {
@@ -63,6 +69,7 @@ typedef struct cub3D
 	struct color	*col;
 	struct mx		*mlx;
 	struct paths	*pts;
+	struct smap		*sma;
 	int				fd;
 }	t_cub;
 
@@ -77,6 +84,12 @@ char			*ft_strdup(const char *s1);
 char			*ft_clean(char *c);
 int				ft_atoi(const char *str);
 int				ft_isspace(size_t c);
+int				ft_sisspace(char *c);
+void			ft_lstadd_back_m(t_smap **a, t_smap *new);
+t_smap			*ft_lstlast_m(t_smap *lst);
+t_smap			*ft_lstblast_m(t_smap *lst);
+t_smap			*ft_lstnew_m(char *s);
+void			clear_smap(t_smap **sma);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -87,5 +100,6 @@ void			read_map(t_cub *cub);
 void			face_path(t_cub *cub, char *lin);
 void			color_set(t_cub *cub, char *lin);
 unsigned int	get_rgba(int r, int g, int b);
+void			clean_map(t_cub *cub, t_smap *smap);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 10:21:25 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 11:00:39 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 09:59:58 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,15 @@ char	*ft_strjoing(char *naah, char *buff)
 		naah = (char *)malloc(1 * sizeof(char));
 		naah[0] = '\0';
 	}
-	if (!naah || !buff)
+	if (!naah && !buff)
 		return (NULL);
 	str = malloc(sizeof(char) * ((ft_strleng(naah) + ft_strleng(buff)) + 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
 	j = 0;
-	if (naah)
-		while (naah[++i] != '\0')
-			str[i] = naah[i];
+	while (naah[++i] != '\0')
+		str[i] = naah[i];
 	while (buff[j] != '\0')
 		str[i++] = buff[j++];
 	str[ft_strleng(naah) + ft_strleng(buff)] = '\0';
@@ -107,7 +106,7 @@ char	*notthisone(char *naah)
 		free(naah);
 		return (NULL);
 	}
-	str = (char *)malloc(sizeof(char) * (ft_strleng(naah) - i + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strleng(naah) - i));
 	if (!str)
 		return (NULL);
 	i++;

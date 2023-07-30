@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 17:49:11 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 10:28:36 by agimi            ###   ########.fr       */
+/*   Created: 2023/07/30 09:16:39 by agimi             #+#    #+#             */
+/*   Updated: 2023/07/30 13:25:19 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-int	ft_isspace(size_t c)
+t_smap	*ft_lstlast_m(t_smap *lst)
 {
-	if ((c == ' ' || c == '\t' || c == '\v'
-			|| c == '\n' || c == '\f' || c == '\r'))
-		return (1);
-	return (0);
+	if (!lst)
+		return (NULL);
+	while (lst->nxt)
+		lst = lst->nxt;
+	return (lst);
 }
 
-int	ft_sisspace(char *c)
+t_smap	*ft_lstblast_m(t_smap *lst)
 {
-	int	i;
-
-	if (!c)
-		return (1);
-	i = -1;
-	while (c[++i] && c[i] == ' ')
-		;
-	if (!c[i])
-		return (1);
-	return (0);
+	if (!lst)
+		return (NULL);
+	while (lst->nxt->nxt)
+		lst = lst->nxt;
+	return (lst);
 }

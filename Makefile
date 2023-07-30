@@ -14,13 +14,14 @@ HEADERS_LIST =	cub3D.h \
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY =	sources/
-SOURCES_LIST =	color_set.c \
+SOURCES_LIST =	clean_map.c \
+				color_set.c \
 				cub3D.c \
 				face_path.c \
 				get_out.c \
 				get_rgba.c \
 				init.c \
-				map.c \
+				read_map.c \
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
@@ -28,6 +29,10 @@ LIBFT_DIRECTORY =	libft/
 LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_clean.c \
 						ft_isspace.c \
+						ft_lstadd_back.c \
+						ft_lstclear.c \
+						ft_lstlast.c \
+						ft_lstnew.c \
 						ft_putchar_fd.c \
 						ft_putstr_fd.c \
 						ft_strdup.c \
