@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:04:15 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 17:50:56 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/29 19:00:32 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ void	face_path(t_cub *cub, char *lin)
 	fa = ft_strdup(ft_clean(lin));
 	if (*face[i])
 		get_out_s(cub, "Faces Can be set one time\n");
-	*face[i] = fa;
+	*face[i] = ft_strdup(fa);
+	free(fa);
 }

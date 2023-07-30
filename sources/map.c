@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:51:59 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 18:22:22 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/29 19:11:34 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ void	read_map(t_cub *cub)
 		if (!lin)
 			break ;
 	}
-		printf("no[%s]\nso[%s]\nwe[%s]\nea[%s]\n", cub->pts->no, cub->pts->so, cub->pts->we, cub->pts->ea);
-		printf("f[%x]\nc[%x]\n", cub->col->flo, cub->col->cei);
+	printf("no[%s]\nso[%s]\nwe[%s]\nea[%s]\n", cub->pts->no, cub->pts->so, cub->pts->we, cub->pts->ea);
+	printf("f[%x]\nc[%x]\n", cub->col->flo, cub->col->cei);
 }

@@ -1,1 +1,6 @@
 /test.c
+cub3D
+.vscode
+.DS_Store
+*.o
+*.a

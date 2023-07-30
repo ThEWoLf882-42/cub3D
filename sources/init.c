@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 18:21:08 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/29 19:02:07 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,8 @@ void	init(t_cub *cub, char *av)
 	cub->mlx = NULL;
 	open_map(cub, av);
 	read_map(cub);
+	free(cub->pts->no);
+	free(cub->pts->so);
+	free(cub->pts->we);
+	free(cub->pts->ea);
 }
