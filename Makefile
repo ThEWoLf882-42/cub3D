@@ -14,7 +14,8 @@ HEADERS_LIST =	cub3D.h \
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY =	sources/
-SOURCES_LIST =	clean_map.c \
+SOURCES_LIST =	check_map.c \
+				clean_map.c \
 				color_set.c \
 				cub3D.c \
 				face_path.c \

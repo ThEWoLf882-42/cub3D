@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 14:28:03 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 16:21:00 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	init(t_cub *cub, char *av)
 	open_map(cub, av);
 	read_map(cub);
 	clean_map(cub, cub->sma);
+	check_map(cub, cub->sma);
 	printf("no[%s]\nso[%s]\nwe[%s]\nea[%s]\n", cub->pts->no, cub->pts->so, cub->pts->we, cub->pts->ea);
 	printf("f[%x]\nc[%x]\n", cub->col->flo, cub->col->cei);
 	sma = cub->sma;

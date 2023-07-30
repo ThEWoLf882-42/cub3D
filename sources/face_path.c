@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:04:15 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 19:00:32 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 14:39:42 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	face_path(t_cub *cub, char *lin)
 	face[2] = &cub->pts->we;
 	face[3] = &cub->pts->ea;
 	i = select_i(lin);
+	while (*lin == ' ' || *lin == '\t')
+		lin++;
 	lin = lin + 2;
 	while (*lin == ' ' || *lin == '\t')
 		lin++;

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:25:05 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 10:06:37 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 14:48:47 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,12 @@ void	color_set(t_cub *cub, char *lin)
 	while (*lin && *lin != ',')
 		lin++;
 	rgb[2] = ft_atoi(++lin);
+	while (*lin && *lin != ',')
+		lin++;
 	color_check(cub, rgb);
-	if (*co[i] != 0)
+	if (*lin)
+		get_out_s(cub, "Tomany ,\n");
+	if (*co[i])
 		get_out_s(cub, "Colors Can be set one time\n");
 	*co[i] = get_rgba(rgb[0], rgb[1], rgb[2]);
 }

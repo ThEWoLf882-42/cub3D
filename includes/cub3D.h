@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 14:25:06 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 16:07:03 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct smap
 {
 	char		*s;
 	struct smap	*nxt;
+	struct smap	*prv;
 }	t_smap;
 
 typedef struct map
@@ -101,5 +102,6 @@ void			face_path(t_cub *cub, char *lin);
 void			color_set(t_cub *cub, char *lin);
 unsigned int	get_rgba(int r, int g, int b);
 void			clean_map(t_cub *cub, t_smap *smap);
+void			check_map(t_cub *cub, t_smap *sma);
 
 #endif

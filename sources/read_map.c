@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:51:59 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 10:35:07 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/30 16:33:44 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	open_map(t_cub *cub, char *fd)
 	if ((fd[i - 3] != '.' || fd[i - 2] != 'c'
 			|| fd[i - 1] != 'u' || fd[i] != 'b'))
 		get_out_s(cub, "Hey You\nWhere is the cub\n");
-	cub->fd = open(fd, O_RDONLY);
+	cub->fd = open(fd, O_RDWR);
 	if (cub->fd == -1)
 		get_out_s(cub, "open failed\n");
 }
