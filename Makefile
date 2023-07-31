@@ -22,7 +22,9 @@ SOURCES_LIST =	check_map.c \
 				get_out.c \
 				get_rgba.c \
 				init.c \
+				loop.c \
 				read_map.c \
+				smap_map.c \
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
@@ -34,6 +36,7 @@ LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_lstclear.c \
 						ft_lstlast.c \
 						ft_lstnew.c \
+						ft_lstsize.c \
 						ft_putchar_fd.c \
 						ft_putstr_fd.c \
 						ft_strdup.c \

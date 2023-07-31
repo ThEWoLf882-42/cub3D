@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:00:25 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 20:13:22 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 12:06:14 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,21 @@
 int	main(int ac, char **av)
 {
 	t_cub	cub;
+	t_pts	pts;
+	t_col	col;
+	t_map	map;
+	t_mlx	mx;
 
 	if (ac == 2)
 	{
+		cub.pts = &pts;
+		cub.col = &col;
+		cub.map = &map;
+		cub.mx = &mx;
 		init(&cub, av[1]);
+		mlx_loop_hook(cub.mx->mlx, loop, &cub);
+		mlx_loop(cub.mx->mlx);
+		mlx_terminate(cub.mx->mlx);
 		clear_smap(&cub.sma);
 		free(cub.pts->no);
 		free(cub.pts->so);

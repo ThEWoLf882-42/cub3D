@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 09:16:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 10:48:55 by agimi            ###   ########.fr       */
+/*   Created: 2023/07/30 22:48:08 by agimi             #+#    #+#             */
+/*   Updated: 2023/07/30 22:50:14 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-t_smap	*ft_lstlast_m(t_smap *lst)
+int	ft_lstsize(t_smap *sma)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->nxt)
-		lst = lst->nxt;
-	return (lst);
-}
+	int	i;
 
-t_smap	*ft_lstblast_m(t_smap *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst->nxt && lst->nxt->nxt)
-		lst = lst->nxt;
-	return (lst);
+	i = 0;
+	while (sma)
+	{
+		i++;
+		sma = sma->nxt;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 20:13:37 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 12:07:35 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	init_pts(t_cub *cub)
 {
-	t_pts	pts;
-
-	cub->pts = &pts;
 	cub->pts->no = NULL;
 	cub->pts->so = NULL;
 	cub->pts->we = NULL;
@@ -25,9 +22,6 @@ void	init_pts(t_cub *cub)
 
 void	init_col(t_cub *cub)
 {
-	t_col	col;
-
-	cub->col = &col;
 	cub->col->cei = 0;
 	cub->col->flo = 0;
 }
@@ -49,13 +43,20 @@ void	init_sma(t_cub *cub, char *av)
 	}
 }
 
+void	init_mx(t_cub *cub)
+{
+	cub->mx->mlx = mlx_init(WIDTH, HEIGHT, "cube3D", false);
+	cub->mx->img = mlx_new_image(cub->mx->mlx, WIDTH, HEIGHT);
+	mlx_image_to_window(cub->mx->mlx, cub->mx->img, 0, 0);
+}
+
 void	init(t_cub *cub, char *av)
 {
 	init_pts(cub);
 	init_col(cub);
 	init_sma(cub, av);
-	cub->map = NULL;
-	cub->mlx = NULL;
+	init_mx(cub);
+	smap_map(cub);
 	printf("no[%s]\nso[%s]\nwe[%s]\nea[%s]\n", cub->pts->no, cub->pts->so,
 		cub->pts->we, cub->pts->ea);
 	printf("f[%x]\nc[%x]\n", cub->col->flo, cub->col->cei);

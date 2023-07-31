@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 13:03:34 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 16:01:21 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 10:49:27 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	clean_map(t_cub *cub, t_smap *smap)
 		|| !cub->pts->so || !cub->pts->ea || !cub->pts->we)
 		get_out_s(cub, "Map Element missing\n");
 	trim_space(smap);
-	if (ft_sisspace(ft_lstblast_m(smap)->nxt->s))
+	if (smap->nxt && ft_sisspace(ft_lstblast_m(smap)->nxt->s))
 	{
 		tsma = ft_lstblast_m(smap)->nxt;
 		free(tsma->s);
