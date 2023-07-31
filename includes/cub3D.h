@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 12:16:24 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 12:46:04 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ typedef struct cub3D
 	int				fd;
 }	t_cub;
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 void			ft_putstr_fd(char *s, int fd);
 size_t			ft_strlen(const char *a);
@@ -94,8 +94,9 @@ t_smap			*ft_lstblast_m(t_smap *lst);
 t_smap			*ft_lstnew_m(char *s);
 void			clear_smap(t_smap **sma);
 int				ft_lstsize(t_smap *sma);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 void			init(t_cub *cub, char *av);
 void			open_map(t_cub *cub, char *fd);

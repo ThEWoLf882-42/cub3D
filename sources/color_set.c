@@ -6,18 +6,19 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:25:05 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 14:48:47 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 12:41:17 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-static int	select_i(char *lin)
+static int	select_i(t_cub *cub, char *lin)
 {
-	if (ft_strstr(lin, "F"))
+	if (!ft_strncmp(lin, "F ", 2))
 		return (0);
-	if (ft_strstr(lin, "C"))
+	if (!ft_strncmp(lin, "C ", 2))
 		return (1);
+	get_out_s(cub, "Nice Try\n");
 	return (0);
 }
 
@@ -37,12 +38,12 @@ void	color_set(t_cub *cub, char *lin)
 	int				rgb[3];
 	int				i;
 
-	i = select_i(lin);
 	co[0] = &(cub->col->flo);
 	co[1] = &(cub->col->cei);
-	lin++;
 	while (*lin == ' ' || *lin == '\t')
 		lin++;
+	i = select_i(cub, lin);
+	lin++;
 	rgb[0] = ft_atoi(lin);
 	while (*lin && *lin != ',')
 		lin++;

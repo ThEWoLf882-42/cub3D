@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 12:07:35 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 12:48:10 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,11 @@ void	init_col(t_cub *cub)
 
 void	init_sma(t_cub *cub, char *av)
 {
-	t_smap	*sma;
-
 	cub->sma = NULL;
 	open_map(cub, av);
 	read_map(cub);
 	clean_map(cub, cub->sma);
 	check_map(cub, cub->sma);
-	sma = cub->sma;
-	while (sma)
-	{
-		printf("map[%s]\n", sma->s);
-		sma = sma->nxt;
-	}
 }
 
 void	init_mx(t_cub *cub)

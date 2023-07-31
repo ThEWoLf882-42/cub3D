@@ -41,6 +41,7 @@ LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_putstr_fd.c \
 						ft_strdup.c \
 						ft_strlen.c \
+						ft_strncmp.c \
 						ft_strstr.c \
 						get_next_line_utils.c \
 						get_next_line.c \
