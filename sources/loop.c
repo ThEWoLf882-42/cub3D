@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 21:42:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 12:46:12 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 14:39:10 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	loop(void *par)
 	int		y;
 
 	cub = par;
-	if (mlx_is_key_down(cub->mx->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(cub->mx->mlx);
 	x = -1;
 	while (++x < WIDTH)
 	{
@@ -33,17 +31,17 @@ void	loop(void *par)
 				mlx_put_pixel(cub->mx->img, x, y, cub->col->flo);
 		}
 	}
-	x = 0;
-	while (cub->map->map[x])
+	y = 0;
+	while (cub->map->map[y])
 	{
-		y = -1;
-		while (cub->map->map[x][++y])
+		x = -1;
+		while (cub->map->map[y][++x])
 		{
-			if (cub->map->map[x][y] == '1')
-				mlx_put_pixel(cub->mx->img, y, x, 0xFFFFFFFF);
-			else if (cub->map->map[x][y] == '0')
-				mlx_put_pixel(cub->mx->img, y, x, 0x00000000);
+			if (cub->map->map[y][x] == '1')
+				mlx_put_pixel(cub->mx->img, x, y, 0xFFFFFFFF);
+			else if (cub->map->map[y][x] == '0')
+				mlx_put_pixel(cub->mx->img, x, y, 0x00000000);
 		}
-		x++;
+		y++;
 	}
 }

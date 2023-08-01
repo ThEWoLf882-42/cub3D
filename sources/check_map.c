@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 15:39:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 19:49:12 by agimi            ###   ########.fr       */
+/*   Updated: 2023/07/31 13:57:36 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_map(t_cub *cub, t_smap *sma)
 		i = -1;
 		while (sma->s[++i])
 		{
-			if (sma->s[i] == '0')
+			if (sma->s[i] == '0' || ft_isplayer(sma->s[i]))
 			{
 				if (i - 1 < 0 && (!sma->s[i - 1] || sma->s[i - 1] == ' '))
 					get_out_s(cub, "Invalid map\n");

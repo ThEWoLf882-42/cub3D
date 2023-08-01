@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 22:43:08 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 12:12:28 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 11:38:30 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,44 @@ char	*map_xfa(t_smap *sma)
 	{
 		x = XFA + 1;
 		while (--x)
-			xfa[j++] = sma->s[i];
+		{
+			if (ft_isplayer(sma->s[i]))
+				xfa[j++] = '0';
+			else
+				xfa[j++] = sma->s[i];
+		}
 	}
 	xfa[j] = '\0';
 	return (xfa);
+}
+
+void	get_playerp(t_cub *cub)
+{
+	t_smap	*sma;
+	int		y;
+	int		x;
+
+	sma = cub->sma;
+	y = 0;
+	while (sma)
+	{
+		x = -1;
+		while (sma->s[++x])
+		{
+			if (ft_isplayer(sma->s[x]))
+			{
+				cub->px = (x * XFA) + (XFA / 2);
+				cub->py = (y * XFA) + (XFA / 2);
+				cub->pan = 0;
+				cub->pdx = cos(cub->pan) * 5;
+				cub->pdy = sin(cub->pan) * 5;
+				cub->fov = M_PI / 3.0;
+				return ;
+			}
+		}
+		y++;
+		sma = sma->nxt;
+	}
 }
 
 void	smap_map(t_cub *cub)
@@ -56,4 +90,5 @@ void	smap_map(t_cub *cub)
 	}
 	map[i] = NULL;
 	cub->map->map = map;
+	get_playerp(cub);
 }

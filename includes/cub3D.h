@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 12:46:04 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 11:50:09 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define WIDTH 2560
 # define HEIGHT 1440
 # define XFA 16
+# define NOR 10000
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69
 # endif
@@ -26,6 +27,7 @@
 # include <errno.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <math.h>
 # include <MLX42/MLX42.h>
 
 typedef struct smap
@@ -73,6 +75,12 @@ typedef struct cub3D
 	struct mx		*mx;
 	struct paths	*pts;
 	struct smap		*sma;
+	double			px;
+	double			py;
+	float			pdx;
+	float			pdy;
+	double			pan;
+	float			fov;
 	int				fd;
 }	t_cub;
 
@@ -95,6 +103,7 @@ t_smap			*ft_lstnew_m(char *s);
 void			clear_smap(t_smap **sma);
 int				ft_lstsize(t_smap *sma);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_isplayer(size_t c);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -109,5 +118,7 @@ void			clean_map(t_cub *cub, t_smap *smap);
 void			check_map(t_cub *cub, t_smap *sma);
 void			loop(void *par);
 void			smap_map(t_cub *cub);
+void			move(void *par);
+void			cast(void *pra);
 
 #endif

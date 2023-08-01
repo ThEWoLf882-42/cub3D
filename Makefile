@@ -1,7 +1,7 @@
 NAME	= cub3D
 
 CC		:= cc
-FLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast #-fsanitize=address -g
+FLAGS	:= -Wextra -Wall -Werror -Wunreachable-code -Ofast -fsanitize=address -g
 LIBMLX	:= /Users/$(USER)/MLX42
 LIBS	:= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 
@@ -14,7 +14,8 @@ HEADERS_LIST =	cub3D.h \
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 
 SOURCES_DIRECTORY =	sources/
-SOURCES_LIST =	check_map.c \
+SOURCES_LIST =	cast.c \
+				check_map.c \
 				clean_map.c \
 				color_set.c \
 				cub3D.c \
@@ -23,6 +24,7 @@ SOURCES_LIST =	check_map.c \
 				get_rgba.c \
 				init.c \
 				loop.c \
+				move.c \
 				read_map.c \
 				smap_map.c \
 
@@ -31,7 +33,7 @@ SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 LIBFT_DIRECTORY =	libft/
 LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_clean.c \
-						ft_isspace.c \
+						ft_is.c \
 						ft_lstadd_back.c \
 						ft_lstclear.c \
 						ft_lstlast.c \
