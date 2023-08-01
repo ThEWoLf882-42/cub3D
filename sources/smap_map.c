@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 22:43:08 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 11:38:30 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 12:03:31 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ char	*map_xfa(t_smap *sma)
 	return (xfa);
 }
 
+double	select_dir(char	p)
+{
+	if (p == 'N')
+		return (-(M_PI / 2));
+	if (p == 'S')
+		return (M_PI / 2);
+	if (p == 'E')
+		return (0);
+	if (p == 'W')
+		return (M_PI);
+	return (0);
+}
+
 void	get_playerp(t_cub *cub)
 {
 	t_smap	*sma;
@@ -56,7 +69,7 @@ void	get_playerp(t_cub *cub)
 			{
 				cub->px = (x * XFA) + (XFA / 2);
 				cub->py = (y * XFA) + (XFA / 2);
-				cub->pan = 0;
+				cub->pan = select_dir(sma->s[x]);
 				cub->pdx = cos(cub->pan) * 5;
 				cub->pdy = sin(cub->pan) * 5;
 				cub->fov = M_PI / 3.0;
