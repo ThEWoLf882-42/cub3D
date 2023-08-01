@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 15:46:09 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 12:26:54 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,4 @@ void	init(t_cub *cub, char *av)
 	init_sma(cub, av);
 	init_mx(cub);
 	smap_map(cub);
-	// printf("no[%s]\nso[%s]\nwe[%s]\nea[%s]\n", cub->pts->no, cub->pts->so,
-	// 	cub->pts->we, cub->pts->ea);
-	// printf("f[%x]\nc[%x]\n", cub->col->flo, cub->col->cei);
 }

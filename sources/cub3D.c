@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:00:25 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 18:06:45 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 15:54:54 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int ac, char **av)
 		cub.map = &map;
 		cub.mx = &mx;
 		init(&cub, av[1]);
+		mlx_cursor_hook(cub.mx->mlx, mouse, &cub);
 		mlx_loop_hook(cub.mx->mlx, loop, &cub);
 		mlx_loop_hook(cub.mx->mlx, move, &cub);
 		mlx_loop_hook(cub.mx->mlx, cast, &cub);

@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 11:40:57 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 12:40:05 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void draw_line(t_cub *cub, double x1, double y1, double x2, double y2)
         int grid_y = (int)floor(y);
         if (cub->map->map[grid_y][grid_x] == '1')
             break;
-        mlx_put_pixel(cub->mx->img, (int)x, (int)y, 0xFFFFFF); // Draw white pixel for the line.
+        mlx_put_pixel(cub->mx->img, (int)x, (int)y, 0x800080FF);
         x += x_inc;
         y += y_inc;
         steps--;
@@ -63,7 +63,6 @@ void	cast(void *pra)
             if (ray_x < 0 || ray_x >= WIDTH || ray_y < 0 || ray_y >= HEIGHT)
                 break;
         }
-
         draw_line(cub, cub->px, cub->py, ray_x, ray_y);
     }
 

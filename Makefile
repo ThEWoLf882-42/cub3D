@@ -24,6 +24,7 @@ SOURCES_LIST =	cast.c \
 				get_rgba.c \
 				init.c \
 				loop.c \
+				mouse.c \
 				move.c \
 				read_map.c \
 				smap_map.c \

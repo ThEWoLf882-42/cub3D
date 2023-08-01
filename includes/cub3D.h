@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 11:50:09 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 16:01:28 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # define HEIGHT 1440
 # define XFA 16
 # define NOR 10000
+# define MSTEP 1.5
+# define STEPS 10
+# define MSENS 120
+# define RSTEP 0.087266
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69
 # endif
@@ -120,5 +124,6 @@ void			loop(void *par);
 void			smap_map(t_cub *cub);
 void			move(void *par);
 void			cast(void *pra);
+void			mouse(double x, double y, void *par);
 
 #endif
