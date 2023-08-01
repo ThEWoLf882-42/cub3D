@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 16:01:28 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 16:26:04 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,31 @@ typedef struct paths
 	char	*we;
 	char	*ea;
 }	t_pts;
+
+typedef struct cast
+{
+	double	sta;
+	double	ani;
+	double	ang;
+	double	dx;
+	double	dy;
+	double	rx;
+	double	ry;
+}	t_cas;
+
+typedef struct dline
+{
+	double	dx;
+	double	dy;
+	double	ste;
+	double	xi;
+	double	yi;
+	double	x;
+	double	y;
+	int		gx;
+	int		gy;
+
+}	t_line;
 
 typedef struct cub3D
 {
