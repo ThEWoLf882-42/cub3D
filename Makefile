@@ -66,12 +66,12 @@ RESET = \033[0m
 
 .PHONY: all clean fclean re libmlx
 
-all: libmlx $(NAME)
+all: $(NAME)
 
-libmlx:
+$(LIBMLX)/build/libmlx42.a:
 	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
 
-$(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS)
+$(NAME): $(OBJECTS_DIRECTORY) $(OBJECTS) $(LIBMLX)/build/libmlx42.a
 	@$(CC) $(FLAGS) $(INCLUDES) $(OBJECTS) $(LIBS) -o $(NAME)
 	@echo "\n$(NAME): $(GREEN)$(NAME) object files were created$(RESET)"
 	@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"

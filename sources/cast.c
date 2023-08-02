@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/02 12:57:38 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/02 13:35:22 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 	double	hs;
 	double	cow;
 	int		x;
-	int		r;
 	int		y;
 
 	coh = (16 * HEIGHT) / cas->dis;
@@ -26,16 +25,10 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 		coh = HEIGHT;
 	cow = WIDTH / NOR;
 	hs = coh + (HEIGHT / 2 - (coh / 2));
-	x = (i * cow) - 1;
-	r = x + 1;
-	while (++x <= r)
-	{
+	x = (i);
 		y = HEIGHT / 2 - (coh / 2);
-		while (++y <= hs)
-		{
-			mlx_put_pixel(cub->mx->img, x, y, 0xFFFFFFFF);
-		}
-	}
+	while (++y < hs)
+		mlx_put_pixel(cub->mx->img, x, y, 0xFFFFFFFF);
 }
 
 void	draw_line(t_cub *cub, t_cas *cas)
@@ -61,6 +54,7 @@ void	draw_line(t_cub *cub, t_cas *cas)
 		line.ste--;
 	}
 	cas->dis = sqrt(line.dx * line.dx + line.dy * line.dy);
+	cas->dis = cas->dis * cos(cas->ang - cub->pan);
 }
 
 void	cast(void *pra)
