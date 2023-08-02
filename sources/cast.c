@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 16:25:29 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 22:46:41 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	cast(void *pra)
 			if (cas.rx < 0 || cas.rx >= WIDTH || cas.ry < 0 || cas.ry >= HEIGHT)
 				break ;
 		}
+		cas.dis = sqrt((cas.rx - cub->px) * (cas.rx - cub->px)
+				+ (cas.ry - cub->py) * (cas.ry - cub->py));
 		draw_line(cub, &cas);
 	}
 }

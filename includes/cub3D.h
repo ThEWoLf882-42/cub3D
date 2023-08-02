@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 16:26:04 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 21:55:59 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define NOR 10000
 # define MSTEP 1.5
 # define STEPS 10
+# define DISTP 2.0
 # define MSENS 120
 # define RSTEP 0.087266
 # ifndef BUFFER_SIZE
@@ -81,6 +82,7 @@ typedef struct cast
 	double	dy;
 	double	rx;
 	double	ry;
+	double	dis;
 }	t_cas;
 
 typedef struct dline
@@ -146,6 +148,7 @@ unsigned int	get_rgba(int r, int g, int b);
 void			clean_map(t_cub *cub, t_smap *smap);
 void			check_map(t_cub *cub, t_smap *sma);
 void			loop(void *par);
+void			flo_cei(void *par);
 void			smap_map(t_cub *cub);
 void			move(void *par);
 void			cast(void *pra);

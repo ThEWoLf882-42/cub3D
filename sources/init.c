@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 12:26:54 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 16:44:40 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void	init_mx(t_cub *cub)
 
 void	init(t_cub *cub, char *av)
 {
+	cub->fov = M_PI / 3.0;
+	cub->px = 0;
+	cub->py = 0;
 	init_pts(cub);
 	init_col(cub);
 	init_sma(cub, av);

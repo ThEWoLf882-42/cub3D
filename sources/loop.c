@@ -6,13 +6,13 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 21:42:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 14:39:10 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/01 19:04:18 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	loop(void *par)
+void	flo_cei(void *par)
 {
 	t_cub	*cub;
 	int		x;
@@ -31,6 +31,15 @@ void	loop(void *par)
 				mlx_put_pixel(cub->mx->img, x, y, cub->col->flo);
 		}
 	}
+}
+
+void	loop(void *par)
+{
+	t_cub	*cub;
+	int		x;
+	int		y;
+
+	cub = par;
 	y = 0;
 	while (cub->map->map[y])
 	{
