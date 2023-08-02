@@ -6,11 +6,35 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 22:46:41 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/02 10:32:14 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+
+void	draw_column(t_cub *cub, t_cas *cas, int i)
+{
+	double	coh;
+	double	hs;
+	double	cow;
+	int		x;
+	int		y;
+
+	coh = (16 * HEIGHT) / cas->dis;
+	if (coh > HEIGHT)
+		coh = HEIGHT;
+	cow = WIDTH / NOR;
+	hs = coh + (HEIGHT / 2 - (coh / 2));
+	x = (i * cow) +  - 1;
+	while (++x < i * cow)
+	{
+		y = HEIGHT / 2 - (coh / 2);
+		while (++y < hs)
+		{
+			mlx_put_pixel(cub->mx->img, x, y, 0xFFFFFFFF);
+		}
+	}
+}
 
 void	draw_line(t_cub *cub, t_cas *cas)
 {
@@ -63,5 +87,6 @@ void	cast(void *pra)
 		cas.dis = sqrt((cas.rx - cub->px) * (cas.rx - cub->px)
 				+ (cas.ry - cub->py) * (cas.ry - cub->py));
 		draw_line(cub, &cas);
+		draw_column(cub, &cas, i);
 	}
 }
