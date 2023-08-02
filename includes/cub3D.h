@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/02 13:58:54 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/02 16:38:29 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 // # define HEIGHT 720
 # define XFA 16
 # define NOR 2560
-# define MSTEP 1.5
-# define STEPS 0.05
+# define MSTEP 2
+# define STEPS 0.1
 # define DISTP 2.0
 # define MSENS 120
 # define RSTEP 0.087266
@@ -120,7 +120,7 @@ typedef struct cub3D
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 void			ft_putstr_fd(char *s, int fd);
-size_t			ft_strlen(const char *a);
+int				ft_strlen(const char *a);
 void			ft_putchar_fd(char c, int fd);
 char			*get_next_line(int fd);
 char			*ft_strstr(const char *haystack, const char *needle);

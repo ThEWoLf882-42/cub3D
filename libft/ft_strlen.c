@@ -6,13 +6,13 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:40:21 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/29 10:27:40 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/02 16:38:18 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-size_t	ft_strlen(const char *a)
+int	ft_strlen(const char *a)
 {
 	int	i;
 

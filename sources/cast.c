@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/02 13:56:38 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/02 16:32:04 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 	x = (i);
 		y = HEIGHT / 2 - (coh / 2);
 	while (++y < hs)
-		mlx_put_pixel(cub->mx->img, x, y, 0xFFFFFFFF);
+		mlx_put_pixel(cub->mx->img, x, y, 0xdc143ca5);
 }
 
 void	draw_line(t_cub *cub, t_cas *cas)
