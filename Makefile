@@ -22,6 +22,7 @@ SOURCES_LIST =	cast.c \
 				face_path.c \
 				get_out.c \
 				get_rgba.c \
+				init_texture.c \
 				init.c \
 				loop.c \
 				mouse.c \

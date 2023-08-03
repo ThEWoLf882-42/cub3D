@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 16:44:40 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/03 13:32:06 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ void	init(t_cub *cub, char *av)
 	init_sma(cub, av);
 	init_mx(cub);
 	smap_map(cub);
+	init_texture(cub);
 }

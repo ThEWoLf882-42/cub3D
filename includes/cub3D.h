@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/03 09:21:00 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/03 13:37:46 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # define WIDTH 2560
 # define HEIGHT 1440
-// # define WIDTH 1280
-// # define HEIGHT 720
 # define XFA 16
 # define NOR 2560
 # define MSTEP 2
@@ -155,5 +153,6 @@ void			smap_map(t_cub *cub);
 void			move(void *par);
 void			cast(void *pra);
 void			mouse(double x, double y, void *par);
+void			init_texture(t_cub *cub);
 
 #endif
