@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/03 13:37:46 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/03 15:25:31 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ void			get_out_s(t_cub *cub, char *s);
 void			read_map(t_cub *cub);
 void			face_path(t_cub *cub, char *lin);
 void			color_set(t_cub *cub, char *lin);
-unsigned int	get_rgba(int r, int g, int b);
+unsigned int	get_rgba(int r, int g, int b, int a);
 void			clean_map(t_cub *cub, t_smap *smap);
 void			check_map(t_cub *cub, t_smap *sma);
 void			loop(t_cub *cub);

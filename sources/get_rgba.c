@@ -6,16 +6,16 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 17:58:44 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 22:09:22 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/03 15:26:11 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-unsigned int	get_rgba(int r, int g, int b)
+unsigned int	get_rgba(int r, int g, int b, int a)
 {
 	unsigned int	c;
 
-	c = (r << 24 | g << 16 | b << 8 | 255);
+	c = (r << 24 | g << 16 | b << 8 | a);
 	return (c);
 }
