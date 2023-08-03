@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/02 16:38:29 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/03 09:21:00 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define XFA 16
 # define NOR 2560
 # define MSTEP 2
-# define STEPS 0.1
+# define STEPS 0.05
 # define DISTP 2.0
 # define MSENS 120
 # define RSTEP 0.087266
@@ -79,12 +79,12 @@ typedef struct cast
 {
 	double	sta;
 	double	ani;
-	double	ang;
-	double	dx;
-	double	dy;
-	double	rx;
-	double	ry;
-	double	dis;
+	double	ang[2560];
+	double	dx[2560];
+	double	dy[2560];
+	double	rx[2560];
+	double	ry[2560];
+	double	dis[2560];
 }	t_cas;
 
 typedef struct dline
@@ -149,7 +149,7 @@ void			color_set(t_cub *cub, char *lin);
 unsigned int	get_rgba(int r, int g, int b);
 void			clean_map(t_cub *cub, t_smap *smap);
 void			check_map(t_cub *cub, t_smap *sma);
-void			loop(void *par);
+void			loop(t_cub *cub);
 void			flo_cei(void *par);
 void			smap_map(t_cub *cub);
 void			move(void *par);

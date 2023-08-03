@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 21:42:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/02 16:42:17 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/02 19:30:35 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,11 @@ void	flo_cei(void *par)
 	}
 }
 
-void	loop(void *par)
+void	loop(t_cub *cub)
 {
-	t_cub	*cub;
 	int		x;
 	int		y;
 
-	cub = par;
 	y = 0;
 	while (cub->map->map[y])
 	{
