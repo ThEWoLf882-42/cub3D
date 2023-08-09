@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/03 15:25:31 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/08 18:53:53 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,10 @@ typedef struct mx
 	mlx_texture_t	*we;
 	mlx_texture_t	*ea;
 	mlx_image_t		*img;
+	int				*tno;
+	int				*tso;
+	int				*twe;
+	int				*tea;
 }	t_mlx;
 
 typedef struct paths
@@ -83,6 +87,7 @@ typedef struct cast
 	double	rx[2560];
 	double	ry[2560];
 	double	dis[2560];
+	double	hs;
 }	t_cas;
 
 typedef struct dline

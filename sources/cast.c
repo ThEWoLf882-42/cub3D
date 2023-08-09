@@ -6,26 +6,31 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/03 09:14:47 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/09 12:34:45 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
+// void	print_texture(t_cub *cub, t_cas *cas, int x, int y)
+// {
+	
+// }
+
 void	draw_column(t_cub *cub, t_cas *cas, int i)
 {
 	double	coh;
-	double	hs;
 	int		x;
 	int		y;
 
 	coh = (16 * HEIGHT) / cas->dis[i];
 	if (coh > HEIGHT)
 		coh = HEIGHT;
-	hs = coh + (HEIGHT / 2 - (coh / 2));
+	cas->hs = coh + (HEIGHT / 2 - (coh / 2));
 	x = (i);
 		y = HEIGHT / 2 - (coh / 2);
-	while (++y < hs)
+	while (++y < cas->hs)
+		// print_texture(cub, cas, x, y);
 		mlx_put_pixel(cub->mx->img, x, y, 0xDC143CA5);
 }
 
