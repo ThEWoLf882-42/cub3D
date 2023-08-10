@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 17:49:11 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 13:18:53 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 15:38:16 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,15 @@ int	ft_sisspace(char *c)
 int	ft_isplayer(size_t c)
 {
 	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
+		return (1);
+	return (0);
+}
+
+int	is_ascii(char c)
+{
+	if (c == 47)
+		return (0);
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

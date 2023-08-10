@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:00:25 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 11:01:15 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 15:34:47 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ int	main(int ac, char **av)
 		mlx_loop_hook(cub.mx->mlx, cast, &cub);
 		mlx_loop(cub.mx->mlx);
 		mlx_terminate(cub.mx->mlx);
-		clear_smap(&cub.sma);
-		free(cub.pts->no);
-		free(cub.pts->so);
-		free(cub.pts->we);
-		free(cub.pts->ea);
 	}
 	else
 		ft_putstr_fd("Please Enter a .cub arg (only)\n", 2);

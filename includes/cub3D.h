@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 15:02:26 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 15:39:01 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,7 @@ void			clear_smap(t_smap **sma);
 int				ft_lstsize(t_smap *sma);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_isplayer(size_t c);
+int				is_ascii(char c);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
