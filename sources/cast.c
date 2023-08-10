@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 13:32:29 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 15:10:50 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
 	int		i;
 	float	tmp;
 
-	texture_select(cub, cas, text);
 	if (cas->side[text->x] == TOP || cas->side[text->x] == BOTTOM)
-		xt = (int)(cas->ry[text->x] * 16) % 64;
+		xt = (int)(cas->ry[text->x] * (text->wid / XFA)) % text->wid;
 	else
-		xt = (int)(cas->rx[text->x] * 16) % 64;
+		xt = (int)(cas->rx[text->x] * (text->wid / XFA)) % text->wid;
 	i = text->idx * cub->mx->no->width + xt;
 	tmp = text->y ;
 	while (tmp < text->y + text->yinc)
@@ -48,7 +47,8 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 	text.y = HEIGHT / 2 - (text.coh / 2);
 	text.yinc = (double)(cas->hs - text.y) / cub->mx->no->height;
 	text.idx = 0;
-	while (text.idx < 64)
+	texture_select(cub, cas, &text);
+	while (text.idx < text.wid)
 	{
 		print_texture(cub, cas, &text);
 		text.y += text.yinc;

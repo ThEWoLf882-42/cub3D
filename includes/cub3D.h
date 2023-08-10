@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 11:48:56 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 15:02:26 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ typedef struct text
 	double	yinc;
 	int		idx;
 	double	coh;
+	int		wid;
 }	t_text;
 
 typedef struct cub3D

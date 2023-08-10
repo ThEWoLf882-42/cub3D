@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:04:10 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 14:36:35 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 15:02:56 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,22 @@ void	texture_select(t_cub *cub, t_cas *cas, t_text *text)
 	if (cas->side[text->x] == TOP)
 	{
 		text->tex = cub->mx->twe;
+		text->wid = cub->mx->we->width;
 	}
 	else if (cas->side[text->x] == BOTTOM)
 	{
 		text->tex = cub->mx->tea;
+		text->wid = cub->mx->ea->width;
 	}
 	else if (cas->side[text->x] == RIGHT)
 	{
 		text->tex = cub->mx->tso;
+		text->wid = cub->mx->so->width;
 	}
 	else if (cas->side[text->x] == LEFT)
 	{
 		text->tex = cub->mx->tno;
+		text->wid = cub->mx->no->width;
 	}
 }
 
@@ -37,7 +41,7 @@ void	side_select(t_cub *cub, t_cas *cas, int i)
 	(void)cub;
 	if (cas->side[i] == LEFTRIGHT)
 	{
-		if (cas->ang[i] > 0 && cas->ang[i] <= M_PI)
+		if ((cas->ang[i] > 0 && cas->ang[i] < M_PI) || cas->ang[i] >= 2 * M_PI)
 			cas->side[i] = RIGHT;
 		else
 			cas->side[i] = LEFT;
