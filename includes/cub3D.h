@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/08 18:53:53 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 11:48:56 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,16 @@
 # define XFA 16
 # define NOR 2560
 # define MSTEP 2
-# define STEPS 0.05
+# define STEPS 0.08
 # define DISTP 2.0
 # define MSENS 120
 # define RSTEP 0.087266
+# define TOP 1
+# define BOTTOM 2
+# define LEFT 3
+# define RIGHT 4
+# define TOPBOTTOM 6
+# define LEFTRIGHT 7
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69
 # endif
@@ -81,6 +87,7 @@ typedef struct cast
 {
 	double	sta;
 	double	ani;
+	int		side[2560];
 	double	ang[2560];
 	double	dx[2560];
 	double	dy[2560];
@@ -103,6 +110,16 @@ typedef struct dline
 	int		gy;
 
 }	t_line;
+
+typedef struct text
+{
+	int		*tex;
+	int		x;
+	double	y;
+	double	yinc;
+	int		idx;
+	double	coh;
+}	t_text;
 
 typedef struct cub3D
 {
@@ -159,5 +176,7 @@ void			move(void *par);
 void			cast(void *pra);
 void			mouse(double x, double y, void *par);
 void			init_texture(t_cub *cub);
+void			side_select(t_cub *cub, t_cas *cas, int i);
+void			texture_select(t_cub *cub, t_cas *cas, t_text *text);
 
 #endif

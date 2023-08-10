@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 22:43:08 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/02 16:33:31 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 13:35:03 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*map_xfa(t_smap *sma)
 double	select_dir(char p)
 {
 	if (p == 'N')
-		return (-(M_PI / 2));
+		return (((3 * M_PI) / 2));
 	if (p == 'S')
 		return (M_PI / 2);
 	if (p == 'E')

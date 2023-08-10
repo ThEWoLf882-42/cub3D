@@ -28,6 +28,7 @@ SOURCES_LIST =	cast.c \
 				mouse.c \
 				move.c \
 				read_map.c \
+				selections.c \
 				smap_map.c \
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))

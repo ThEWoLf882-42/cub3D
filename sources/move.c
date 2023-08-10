@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:29:50 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/01 15:42:14 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 14:41:03 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ void	c_r_m(t_cub *cub)
 		cub->pan -= RSTEP;
 	if (mlx_is_key_down(cub->mx->mlx, MLX_KEY_RIGHT))
 		cub->pan += RSTEP;
+	if (cub->pan > 2 * M_PI)
+		cub->pan -= 2 * M_PI;
+	if (cub->pan < 0)
+		cub->pan += 2 * M_PI;
 }
 
 void	move(void *par)

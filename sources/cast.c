@@ -6,32 +6,54 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/09 12:34:45 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/10 13:32:29 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-// void	print_texture(t_cub *cub, t_cas *cas, int x, int y)
-// {
-	
-// }
+void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
+{
+	int		xt;
+	int		i;
+	float	tmp;
+
+	texture_select(cub, cas, text);
+	if (cas->side[text->x] == TOP || cas->side[text->x] == BOTTOM)
+		xt = (int)(cas->ry[text->x] * 16) % 64;
+	else
+		xt = (int)(cas->rx[text->x] * 16) % 64;
+	i = text->idx * cub->mx->no->width + xt;
+	tmp = text->y ;
+	while (tmp < text->y + text->yinc)
+	{
+		i = (text->idx * cub->mx->no->width) + xt;
+		mlx_put_pixel(cub->mx->img, text->x, tmp, text->tex[i]);
+		tmp++;
+	}
+}
 
 void	draw_column(t_cub *cub, t_cas *cas, int i)
 {
-	double	coh;
-	int		x;
-	int		y;
+	t_text	text;
 
-	coh = (16 * HEIGHT) / cas->dis[i];
-	if (coh > HEIGHT)
-		coh = HEIGHT;
-	cas->hs = coh + (HEIGHT / 2 - (coh / 2));
-	x = (i);
-		y = HEIGHT / 2 - (coh / 2);
-	while (++y < cas->hs)
-		// print_texture(cub, cas, x, y);
-		mlx_put_pixel(cub->mx->img, x, y, 0xDC143CA5);
+	cas->dis[i] = sqrt((cas->rx[i] - cub->px) * (cas->rx[i] - cub->px)
+			+ (cas->ry[i] - cub->py) * (cas->ry[i] - cub->py));
+	cas->dis[i] = cas->dis[i] * cos(cas->ang[i] - cub->pan);
+	text.coh = (16 * HEIGHT) / cas->dis[i];
+	if (text.coh > HEIGHT)
+		text.coh = HEIGHT;
+	cas->hs = text.coh + (HEIGHT / 2 - (text.coh / 2));
+	text.x = (i);
+	text.y = HEIGHT / 2 - (text.coh / 2);
+	text.yinc = (double)(cas->hs - text.y) / cub->mx->no->height;
+	text.idx = 0;
+	while (text.idx < 64)
+	{
+		print_texture(cub, cas, &text);
+		text.y += text.yinc;
+		text.idx++;
+	}
 }
 
 void	draw_line(t_cub *cub, t_cas *cas, int i)
@@ -73,14 +95,16 @@ void	cast_loop(t_cub *cub, t_cas *cas)
 		while (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
 		{
 			cas->rx[i] += cas->dx[i] * STEPS;
+			if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
+				cas->side[i] = LEFTRIGHT;
 			cas->ry[i] += cas->dy[i] * STEPS;
+			if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
+				cas->side[i] = TOPBOTTOM;
 			if (cas->rx[i] < 0 || cas->rx[i] >= WIDTH
 				|| cas->ry[i] < 0 || cas->ry[i] >= HEIGHT)
 				break ;
 		}
-		cas->dis[i] = sqrt((cas->rx[i] - cub->px) * (cas->rx[i] - cub->px)
-				+ (cas->ry[i] - cub->py) * (cas->ry[i] - cub->py));
-		cas->dis[i] = cas->dis[i] * cos(cas->ang[i] - cub->pan);
+		side_select(cub, cas, i);
 		draw_column(cub, cas, i);
 	}
 }
