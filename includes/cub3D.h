@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 15:39:01 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/16 12:25:02 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define WIDTH 2560
 # define HEIGHT 1440
 # define XFA 16
-# define NOR 2560
+# define NOR WIDTH
 # define MSTEP 2
 # define STEPS 0.08
 # define DISTP 2.0
@@ -120,6 +120,7 @@ typedef struct text
 	int		idx;
 	double	coh;
 	int		wid;
+	int		hei;
 }	t_text;
 
 typedef struct cub3D
