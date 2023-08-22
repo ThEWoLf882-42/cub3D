@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 09:39:37 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 18:30:12 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:55:36 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	init_texture(t_cub *cub)
 	cub->mx->so = mlx_load_png(cub->pts->so);
 	cub->mx->ea = mlx_load_png(cub->pts->ea);
 	cub->mx->we = mlx_load_png(cub->pts->we);
-	cub->mx->door = mlx_load_png("./textures/DOOR2.PNG");
+	cub->mx->door = mlx_load_png("./textures/DOOR.PNG");
 	if (!cub->mx->no || !cub->mx->so || !cub->mx->ea || !cub->mx->we
 		|| !cub->mx->door)
 		get_out_s(cub, (char *)mlx_strerror(mlx_errno));

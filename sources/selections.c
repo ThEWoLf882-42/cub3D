@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:04:10 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 18:46:32 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:52:43 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	texture_select(t_cub *cub, t_cas *cas, t_text *text)
 	{
 		text->tex = cub->mx->tdo;
 		text->wid = cub->mx->door->width;
-		text->wid = cub->mx->door->height;
+		text->hei = cub->mx->door->height;
 	}
 }
 
