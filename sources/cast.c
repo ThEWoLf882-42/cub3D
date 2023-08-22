@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cast.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/16 12:20:10 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/22 19:07:33 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	draw_line(t_cub *cub, t_cas *cas, int i)
 	{
 		line.gx = (int)floor(line.x);
 		line.gy = (int)floor(line.y);
-		if (cub->map->map[line.gy][line.gx] == '1')
+		if (cub->map->map[line.gy][line.gx] == '1' || cub->map->map[line.gy][line.gx] == 'D')
 			break ;
 		mlx_put_pixel(cub->mx->img, (int)line.x, (int)line.y, 0x800080FF);
 		line.x += line.xi;
@@ -92,7 +92,7 @@ void	cast_loop(t_cub *cub, t_cas *cas)
 		cas->dy[i] = sin(cas->ang[i]);
 		cas->rx[i] = cub->px;
 		cas->ry[i] = cub->py;
-		while (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
+		while (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1' && cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != 'D')
 		{
 			cas->rx[i] += cas->dx[i] * STEPS;
 			if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
@@ -103,6 +103,8 @@ void	cast_loop(t_cub *cub, t_cas *cas)
 			if (cas->rx[i] < 0 || cas->rx[i] >= WIDTH
 				|| cas->ry[i] < 0 || cas->ry[i] >= HEIGHT)
 				break ;
+			if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] == 'D')
+				cas->side[i] = DOOR;
 		}
 		side_select(cub, cas, i);
 		draw_column(cub, cas, i);

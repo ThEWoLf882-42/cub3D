@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/17 12:20:34 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/22 19:07:40 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define RIGHT 4
 # define TOPBOTTOM 6
 # define LEFTRIGHT 7
+# define DOOR 8
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69
 # endif
@@ -68,11 +69,13 @@ typedef struct mx
 	mlx_texture_t	*so;
 	mlx_texture_t	*we;
 	mlx_texture_t	*ea;
+	mlx_texture_t	*door;
 	mlx_image_t		*img;
 	int				*tno;
 	int				*tso;
 	int				*twe;
 	int				*tea;
+	int				*tdo;
 }	t_mlx;
 
 typedef struct paths
@@ -166,7 +169,7 @@ void			init(t_cub *cub, char *av);
 void			open_map(t_cub *cub, char *fd);
 void			get_out_s(t_cub *cub, char *s);
 void			read_map(t_cub *cub);
-void			face_path(t_cub *cub, char *lin);
+void			face_path(t_cub *cub, char *lin); 
 void			color_set(t_cub *cub, char *lin);
 unsigned int	get_rgba(int r, int g, int b, int a);
 void			clean_map(t_cub *cub, t_smap *smap);
@@ -180,5 +183,6 @@ void			mouse(double x, double y, void *par);
 void			init_texture(t_cub *cub);
 void			side_select(t_cub *cub, t_cas *cas, int i);
 void			texture_select(t_cub *cub, t_cas *cas, t_text *text);
+void			door(void *par);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:29:50 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/17 13:06:33 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/22 18:44:28 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 int	mv_tst(char **map, int x, int y)
 {
-	if (map[y][x] == '1')
+	if (map[y][x] == '1' || map[y][x] == 'D')
 		return (0);
 	return (1);
-}
-
-void	set_ds(double *dx, double *dy, double cpan, double span)
-{
-	*dx += cpan * MSTEP;
-	*dy += span * MSTEP;
 }
 
 void	set_xy(t_cub *cub, char **map, double dx, double dy)
@@ -47,6 +41,12 @@ void	c_r_m(t_cub *cub)
 		cub->pan -= 2 * M_PI;
 	if (cub->pan < 0)
 		cub->pan += 2 * M_PI;
+}
+
+void	set_ds(double *dx, double *dy, double cpan, double span)
+{
+	*dx += cpan * MSTEP;
+	*dy += span * MSTEP;
 }
 
 void	move(void *par)
