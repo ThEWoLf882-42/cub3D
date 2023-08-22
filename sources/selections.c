@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:04:10 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 16:19:02 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:46:32 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,31 @@ void	texture_select(t_cub *cub, t_cas *cas, t_text *text)
 	{
 		text->tex = cub->mx->twe;
 		text->wid = cub->mx->we->width;
+		text->hei = cub->mx->we->height;
 	}
 	else if (cas->side[text->x] == BOTTOM)
 	{
 		text->tex = cub->mx->tea;
 		text->wid = cub->mx->ea->width;
+		text->hei = cub->mx->ea->height;
 	}
 	else if (cas->side[text->x] == RIGHT)
 	{
 		text->tex = cub->mx->tso;
 		text->wid = cub->mx->so->width;
+		text->hei = cub->mx->so->height;
 	}
 	else if (cas->side[text->x] == LEFT)
 	{
 		text->tex = cub->mx->tno;
 		text->wid = cub->mx->no->width;
+		text->hei = cub->mx->no->height;
 	}
 	else if (cas->side[text->x] == DOOR)
 	{
 		text->tex = cub->mx->tdo;
 		text->wid = cub->mx->door->width;
+		text->wid = cub->mx->door->height;
 	}
 }
 

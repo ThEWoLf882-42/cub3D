@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/13 11:32:24 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:44:20 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	init(t_cub *cub, char *av)
 	init_pts(cub);
 	init_col(cub);
 	init_sma(cub, av);
-	init_mx(cub);
 	smap_map(cub);
 	init_texture(cub);
+	init_mx(cub);
 }

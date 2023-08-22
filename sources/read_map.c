@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:51:59 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 15:38:42 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:44:44 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	open_map(t_cub *cub, char *fd)
 
 	i = ft_strlen(fd) - 1;
 	if ((fd[i - 3] != '.' || fd[i - 2] != 'c'
-			|| fd[i - 1] != 'u' || fd[i] != 'b'))
-		get_out_s(cub, "Hey You\nWhere is the cub\n");
+			|| fd[i - 1] != 'u' || fd[i] != 'b' || !is_ascii(fd[i - 4])))
+		get_out_s(cub, "Hey You\nWhere is the .cub\n");
 	cub->fd = open(fd, O_RDWR);
 	if (cub->fd == -1)
 		get_out_s(cub, "open failed\n");

@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 18:36:41 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:42:42 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define WIDTH 2560
 # define HEIGHT 1440
 # define XFA 16
-# define NOR 2560
+# define NOR WIDTH
 # define MSTEP 2
 # define STEPS 0.08
 # define DISTP 2.0
@@ -111,7 +111,6 @@ typedef struct dline
 	double	y;
 	int		gx;
 	int		gy;
-
 }	t_line;
 
 typedef struct text
@@ -123,6 +122,7 @@ typedef struct text
 	int		idx;
 	double	coh;
 	int		wid;
+	int		hei;
 }	t_text;
 
 typedef struct cub3D
@@ -161,6 +161,7 @@ void			clear_smap(t_smap **sma);
 int				ft_lstsize(t_smap *sma);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_isplayer(size_t c);
+int				is_ascii(char c);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 

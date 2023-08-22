@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 16:25:15 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 18:43:44 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
 		xt = (int)(cas->ry[text->x] * (text->wid / XFA)) % text->wid;
 	else
 		xt = (int)(cas->rx[text->x] * (text->wid / XFA)) % text->wid;
-	i = text->idx * cub->mx->no->width + xt;
+	i = text->idx * text->wid + xt;
 	tmp = text->y ;
 	while (tmp < text->y + text->yinc)
 	{
-		i = (text->idx * cub->mx->no->width) + xt;
+		i = (text->idx * text->wid) + xt;
 		mlx_put_pixel(cub->mx->img, text->x, tmp, text->tex[i]);
 		tmp++;
 	}
@@ -36,6 +36,7 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 {
 	t_text	text;
 
+	texture_select(cub, cas, &text);
 	cas->dis[i] = sqrt((cas->rx[i] - cub->px) * (cas->rx[i] - cub->px)
 			+ (cas->ry[i] - cub->py) * (cas->ry[i] - cub->py));
 	cas->dis[i] = cas->dis[i] * cos(cas->ang[i] - cub->pan);
@@ -45,9 +46,8 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 	cas->hs = text.coh + (HEIGHT / 2 - (text.coh / 2));
 	text.x = (i);
 	text.y = HEIGHT / 2 - (text.coh / 2);
-	text.yinc = (double)(cas->hs - text.y) / cub->mx->no->height;
+	text.yinc = (double)(cas->hs - text.y) / text.hei;
 	text.idx = 0;
-	texture_select(cub, cas, &text);
 	while (text.idx < text.wid)
 	{
 		print_texture(cub, cas, &text);
