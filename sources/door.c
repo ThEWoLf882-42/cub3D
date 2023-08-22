@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:25:32 by fbelahse          #+#    #+#             */
-/*   Updated: 2023/08/22 18:27:26 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 19:14:09 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void door(void *par)
 	if (y < 0)
 		y = -1;
 	back(cub);
-	if (mlx_is_key_down(cub->mx->mlx, MLX_KEY_O))
+	if (mlx_is_mouse_down(cub->mx->mlx, MLX_MOUSE_BUTTON_LEFT))
 	{
 		while (++y < cub->py + 27.0)
 		{
