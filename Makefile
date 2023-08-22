@@ -28,6 +28,7 @@ SOURCES_LIST =	cast.c \
 				loop.c \
 				mouse.c \
 				move.c \
+				print_texture.c \
 				read_map.c \
 				selections.c \
 				smap_map.c \

@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   selections.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:04:10 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 19:07:55 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 20:19:08 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+
+void	texture_select_c(t_cub *cub, t_cas *cas, t_text *text)
+{
+	if (cas->side[text->x] == DOOR)
+	{
+		text->tex = cub->mx->tdo;
+		text->wid = cub->mx->door->width;
+		text->hei = cub->mx->door->height;
+	}
+}
 
 void	texture_select(t_cub *cub, t_cas *cas, t_text *text)
 {
@@ -38,12 +48,7 @@ void	texture_select(t_cub *cub, t_cas *cas, t_text *text)
 		text->wid = cub->mx->no->width;
 		text->hei = cub->mx->no->height;
 	}
-	else if (cas->side[text->x] == DOOR)
-	{
-		text->tex = cub->mx->tdo;
-		text->wid = cub->mx->door->width;
-		text->hei = cub->mx->door->height;
-	}
+	texture_select_c(cub, cas, text);
 }
 
 void	side_select(t_cub *cub, t_cas *cas, int i)

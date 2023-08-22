@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   door.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:25:32 by fbelahse          #+#    #+#             */
-/*   Updated: 2023/08/22 19:14:09 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 20:20:03 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void back(t_cub *cub)
+void	back(t_cub *cub)
 {
-	int x;
-	int y;
-	int i;
+	int	x;
+	int	y;
+	int	i;
 
 	y = cub->py - 24.0;
 	i = 0;
@@ -35,13 +35,13 @@ void back(t_cub *cub)
 	while (cub->map->map[++y] && !i)
 	{
 		x = -1;
-		while(cub->map->map[y][++x])
+		while (cub->map->map[y][++x])
 			if (cub->map->map[y][x] == 'L')
 				cub->map->map[y][x] = 'D';
 	}
 }
 
-void door(void *par)
+void	door(void *par)
 {
 	t_cub	*cub;
 	double	x;

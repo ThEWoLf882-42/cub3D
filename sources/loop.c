@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   loop.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 21:42:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 16:44:52 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 20:20:19 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	loop(t_cub *cub)
 				mlx_put_pixel(cub->mx->img, x, y, 0xFFFFFFFF);
 			else if (cub->map->map[y][x] == '0' || cub->map->map[y][x] == 'L')
 				mlx_put_pixel(cub->mx->img, x, y, 0x00000000);
-			else if(cub->map->map[y][x] == 'D')
+			else if (cub->map->map[y][x] == 'D')
 				mlx_put_pixel(cub->mx->img, x, y, 0x0005E1FF);
 		}
 		y++;

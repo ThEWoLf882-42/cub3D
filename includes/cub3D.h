@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 19:46:27 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/22 20:15:14 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,5 +188,6 @@ void			side_select(t_cub *cub, t_cas *cas, int i);
 void			texture_select(t_cub *cub, t_cas *cas, t_text *text);
 void			door(void *par);
 void			tot(void *par);
+void			print_texture(t_cub *cub, t_cas *cas, t_text *text);
 
 #endif

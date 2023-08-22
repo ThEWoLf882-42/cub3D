@@ -3,34 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cast.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 19:07:33 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 20:17:04 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
-
-void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
-{
-	int		xt;
-	int		i;
-	float	tmp;
-
-	if (cas->side[text->x] == TOP || cas->side[text->x] == BOTTOM)
-		xt = (int)(cas->ry[text->x] * (text->wid / XFA)) % text->wid;
-	else
-		xt = (int)(cas->rx[text->x] * (text->wid / XFA)) % text->wid;
-	i = text->idx * text->wid + xt;
-	tmp = text->y ;
-	while (tmp < text->y + text->yinc)
-	{
-		i = (text->idx * text->wid) + xt;
-		mlx_put_pixel(cub->mx->img, text->x, tmp, text->tex[i]);
-		tmp++;
-	}
-}
 
 void	draw_column(t_cub *cub, t_cas *cas, int i)
 {
@@ -71,12 +51,32 @@ void	draw_line(t_cub *cub, t_cas *cas, int i)
 	{
 		line.gx = (int)floor(line.x);
 		line.gy = (int)floor(line.y);
-		if (cub->map->map[line.gy][line.gx] == '1' || cub->map->map[line.gy][line.gx] == 'D')
+		if (cub->map->map[line.gy][line.gx] == '1'
+			|| cub->map->map[line.gy][line.gx] == 'D')
 			break ;
 		mlx_put_pixel(cub->mx->img, (int)line.x, (int)line.y, 0x800080FF);
 		line.x += line.xi;
 		line.y += line.yi;
 		line.ste--;
+	}
+}
+
+void	mini_loop(t_cub *cub, t_cas *cas, int i)
+{
+	while (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1'
+		&& cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != 'D')
+	{
+		cas->rx[i] += cas->dx[i] * STEPS;
+		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
+			cas->side[i] = LEFTRIGHT;
+		cas->ry[i] += cas->dy[i] * STEPS;
+		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
+			cas->side[i] = TOPBOTTOM;
+		if (cas->rx[i] < 0 || cas->rx[i] >= WIDTH
+			|| cas->ry[i] < 0 || cas->ry[i] >= HEIGHT)
+			break ;
+		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] == 'D')
+			cas->side[i] = DOOR;
 	}
 }
 
@@ -92,20 +92,7 @@ void	cast_loop(t_cub *cub, t_cas *cas)
 		cas->dy[i] = sin(cas->ang[i]);
 		cas->rx[i] = cub->px;
 		cas->ry[i] = cub->py;
-		while (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1' && cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != 'D')
-		{
-			cas->rx[i] += cas->dx[i] * STEPS;
-			if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
-				cas->side[i] = LEFTRIGHT;
-			cas->ry[i] += cas->dy[i] * STEPS;
-			if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
-				cas->side[i] = TOPBOTTOM;
-			if (cas->rx[i] < 0 || cas->rx[i] >= WIDTH
-				|| cas->ry[i] < 0 || cas->ry[i] >= HEIGHT)
-				break ;
-			if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] == 'D')
-				cas->side[i] = DOOR;
-		}
+		mini_loop(cub, cas, i);
 		side_select(cub, cas, i);
 		draw_column(cub, cas, i);
 	}
