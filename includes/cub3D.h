@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/16 12:25:02 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/17 12:20:34 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ typedef struct dline
 	double	y;
 	int		gx;
 	int		gy;
-
 }	t_line;
 
 typedef struct text

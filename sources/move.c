@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:29:50 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 14:41:03 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/17 13:06:33 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,4 @@ void	move(void *par)
 		set_ds(&dx, &dy, -cos(cub->pan - M_PI / 2.0),
 			-sin(cub->pan - M_PI / 2.0));
 	set_xy(cub, map, dx, dy);
-	mlx_put_pixel(cub->mx->img, cub->px, cub->py, 0x00FF00FF);
 }
