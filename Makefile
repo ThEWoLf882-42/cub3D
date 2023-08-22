@@ -19,6 +19,7 @@ SOURCES_LIST =	cast.c \
 				clean_map.c \
 				color_set.c \
 				cub3D.c \
+				door.c \
 				face_path.c \
 				get_out.c \
 				get_rgba.c \

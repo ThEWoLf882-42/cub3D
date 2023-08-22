@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:51:59 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/30 16:33:44 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/22 15:38:42 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool	allowed_c(char *li)
 	while (li[++i])
 	{
 		if (li[i] != ' ' && li[i] != '1' && li[i] != '0' && li[i] != 'N'
-			&& li[i] != 'S' && li[i] != 'E' && li[i] != 'W')
+			&& li[i] != 'S' && li[i] != 'E' && li[i] != 'W' && li[i] != 'D')
 			return (false);
 	}
 	return (true);

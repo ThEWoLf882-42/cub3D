@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selections.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:04:10 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 15:02:56 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/22 16:19:02 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ void	texture_select(t_cub *cub, t_cas *cas, t_text *text)
 	{
 		text->tex = cub->mx->tno;
 		text->wid = cub->mx->no->width;
+	}
+	else if (cas->side[text->x] == DOOR)
+	{
+		text->tex = cub->mx->tdo;
+		text->wid = cub->mx->door->width;
 	}
 }
 

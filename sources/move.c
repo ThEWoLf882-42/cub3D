@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:29:50 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 14:41:03 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/22 18:37:42 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 int	mv_tst(char **map, int x, int y)
 {
-	if (map[y][x] == '1')
+	if (map[y][x] == '1' || map[y][x] == 'D')
 		return (0);
 	return (1);
-}
-
-void	set_ds(double *dx, double *dy, double cpan, double span)
-{
-	*dx += cpan * MSTEP;
-	*dy += span * MSTEP;
 }
 
 void	set_xy(t_cub *cub, char **map, double dx, double dy)
@@ -49,6 +43,12 @@ void	c_r_m(t_cub *cub)
 		cub->pan += 2 * M_PI;
 }
 
+void	set_ds(double *dx, double *dy, double cpan, double span)
+{
+	*dx += cpan * MSTEP;
+	*dy += span * MSTEP;
+}
+
 void	move(void *par)
 {
 	t_cub	*cub;
@@ -72,5 +72,4 @@ void	move(void *par)
 		set_ds(&dx, &dy, -cos(cub->pan - M_PI / 2.0),
 			-sin(cub->pan - M_PI / 2.0));
 	set_xy(cub, map, dx, dy);
-	mlx_put_pixel(cub->mx->img, cub->px, cub->py, 0x00FF00FF);
 }
