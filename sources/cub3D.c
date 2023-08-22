@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:00:25 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 18:44:05 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 19:45:28 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int ac, char **av)
 		mlx_loop_hook(cub.mx->mlx, move, &cub);
 		mlx_loop_hook(cub.mx->mlx, door, &cub);
 		mlx_loop_hook(cub.mx->mlx, cast, &cub);
+		mlx_loop_hook(cub.mx->mlx, tot, &cub);
 		mlx_loop(cub.mx->mlx);
 		mlx_terminate(cub.mx->mlx);
 	}

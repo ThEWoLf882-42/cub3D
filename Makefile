@@ -31,12 +31,14 @@ SOURCES_LIST =	cast.c \
 				read_map.c \
 				selections.c \
 				smap_map.c \
+				tot.c \
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
 LIBFT_DIRECTORY =	libft/
 LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_clean.c \
+						ft_itoa.c \
 						ft_is.c \
 						ft_lstadd_back.c \
 						ft_lstclear.c \
@@ -46,6 +48,7 @@ LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_putchar_fd.c \
 						ft_putstr_fd.c \
 						ft_strdup.c \
+						ft_strjoin.c \
 						ft_strlen.c \
 						ft_strncmp.c \
 						ft_strstr.c \

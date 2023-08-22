@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 09:39:37 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 18:55:36 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 19:41:41 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,21 @@ int	*text_arr(mlx_texture_t *tex)
 	return (ar);
 }
 
+void	load_tot(t_cub *cub)
+{
+	int		i;
+	char	*path;
+
+	i = -1;
+	while (++i < 38)
+	{
+		path = ft_itoa(i);
+		path = ft_strjoin("sprites/", path);
+		cub->mx->tot[i] = mlx_load_png(path);
+		free(path);
+	}
+}
+
 void	init_texture(t_cub *cub)
 {
 	cub->mx->no = mlx_load_png(cub->pts->no);
@@ -45,4 +60,5 @@ void	init_texture(t_cub *cub)
 	cub->mx->tea = text_arr(cub->mx->ea);
 	cub->mx->twe = text_arr(cub->mx->we);
 	cub->mx->tdo = text_arr(cub->mx->door);
+	load_tot(cub);
 }

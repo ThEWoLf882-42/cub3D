@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 19:07:40 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/22 19:46:27 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct mx
 	mlx_texture_t	*we;
 	mlx_texture_t	*ea;
 	mlx_texture_t	*door;
+	mlx_texture_t	*tot[38];
 	mlx_image_t		*img;
 	int				*tno;
 	int				*tso;
@@ -162,6 +163,8 @@ int				ft_lstsize(t_smap *sma);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_isplayer(size_t c);
 int				is_ascii(char c);
+char			*ft_itoa(int n);
+char			*ft_strjoin(char *s1, char const *s2);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -184,5 +187,6 @@ void			init_texture(t_cub *cub);
 void			side_select(t_cub *cub, t_cas *cas, int i);
 void			texture_select(t_cub *cub, t_cas *cas, t_text *text);
 void			door(void *par);
+void			tot(void *par);
 
 #endif
