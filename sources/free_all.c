@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_out.c                                          :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 16:03:53 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/23 11:23:01 by fbelahse         ###   ########.fr       */
+/*   Created: 2023/08/23 11:04:38 by fbelahse          #+#    #+#             */
+/*   Updated: 2023/08/23 11:27:18 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
-void	get_out_s(t_cub *cub, char *s)
+void	free_all(t_cub *cub)
 {
-	(void)cub;
-	ft_putstr_fd("Error\n", 2);
-	ft_putstr_fd(s, 2);
-	free_all(cub);
-	pause ();
-	exit(1);
+	int	y;
+
+	y = -1;
+	clear_smap(&cub->sma);
+	while (cub->map->map && cub->map->map[++y])
+		free(cub->map->map[y]);
+	free(cub->map->map);
+	free(cub->mx->tno);
+	free(cub->mx->tso);
+	free(cub->mx->tea);
+	free(cub->mx->twe);
+	free(cub->mx->tdo);
 }

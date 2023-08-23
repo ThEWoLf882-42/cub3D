@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 19:50:16 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/23 11:19:27 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ void	init_pts(t_cub *cub)
 	cub->pts->so = NULL;
 	cub->pts->we = NULL;
 	cub->pts->ea = NULL;
+	cub->mx->tdo = NULL;
+	cub->mx->tno = NULL;
+	cub->mx->tso = NULL;
+	cub->mx->twe = NULL;
+	cub->mx->tea = NULL;
 }
 
 void	init_col(t_cub *cub)
@@ -47,6 +52,7 @@ void	init(t_cub *cub, char *av)
 	cub->fov = M_PI / 3.0;
 	cub->px = 0;
 	cub->py = 0;
+	cub->map->map = NULL;
 	init_pts(cub);
 	init_col(cub);
 	init_sma(cub, av);

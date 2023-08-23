@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 20:15:14 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/23 11:11:12 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,5 +189,6 @@ void			texture_select(t_cub *cub, t_cas *cas, t_text *text);
 void			door(void *par);
 void			tot(void *par);
 void			print_texture(t_cub *cub, t_cas *cas, t_text *text);
+void			free_all(t_cub *cub);
 
 #endif
