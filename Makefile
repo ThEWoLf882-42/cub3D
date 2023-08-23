@@ -76,6 +76,8 @@ RESET = \033[0m
 
 all: libmlx $(NAME)
 
+bonus: all
+
 libmlx:
 	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
 
