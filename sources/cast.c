@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cast.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 20:40:44 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/23 13:28:51 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,11 @@ void	draw_line(t_cub *cub, t_cas *cas, int i)
 	}
 }
 
-void	mini_loop(t_cub *cub, t_cas *cas, int i)
+void	mini_loop(t_cub *cub, t_cas *cas)
 {
+	int	i;
+
+	i = cas->i;
 	while (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1'
 		&& cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != 'D')
 	{
@@ -72,11 +75,14 @@ void	mini_loop(t_cub *cub, t_cas *cas, int i)
 		cas->ry[i] += cas->dy[i] * STEPS;
 		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
 			cas->side[i] = TOPBOTTOM;
+		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] == 'D')
+			cas->side[i] = DOOR;
 		if (cas->rx[i] < 0 || cas->rx[i] >= WIDTH
 			|| cas->ry[i] < 0 || cas->ry[i] >= HEIGHT)
 			break ;
-		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] == 'D')
-			cas->side[i] = DOOR;
+		if (wall_check(cub->map->map, cas, cas->rx[i] - cas->dx[i] * STEPS,
+				cas->ry[i] - cas->dy[i] * STEPS))
+			break ;
 	}
 }
 
@@ -87,12 +93,13 @@ void	cast_loop(t_cub *cub, t_cas *cas)
 	i = -1;
 	while (++i < NOR)
 	{
+		cas->i = i;
 		cas->ang[i] = cas->sta + i * cas->ani;
 		cas->dx[i] = cos(cas->ang[i]);
 		cas->dy[i] = sin(cas->ang[i]);
 		cas->rx[i] = cub->px;
 		cas->ry[i] = cub->py;
-		mini_loop(cub, cas, i);
+		mini_loop(cub, cas);
 		side_select(cub, cas, i);
 		draw_column(cub, cas, i);
 	}

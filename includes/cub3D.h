@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/23 11:11:12 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/23 13:15:34 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # define XFA 16
 # define NOR WIDTH
 # define MSTEP 2
-# define STEPS 0.08
+# define STEPS 0.09
 # define DISTP 2.0
 # define MSENS 120
 # define RSTEP 0.087266
@@ -99,6 +99,7 @@ typedef struct cast
 	double	ry[2560];
 	double	dis[2560];
 	double	hs;
+	int		i;
 }	t_cas;
 
 typedef struct dline
@@ -190,5 +191,6 @@ void			door(void *par);
 void			tot(void *par);
 void			print_texture(t_cub *cub, t_cas *cas, t_text *text);
 void			free_all(t_cub *cub);
+bool			wall_check(char **map, t_cas *cas, double ol_x, double ol_y);
 
 #endif

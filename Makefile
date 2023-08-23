@@ -34,6 +34,7 @@ SOURCES_LIST =	cast.c \
 				smap_map.c \
 				tot.c \
 				free_all.c \
+				wall_coll_check.c \
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
