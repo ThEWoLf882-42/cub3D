@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 16:35:18 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/24 20:03:05 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	init(t_cub *cub, char *av)
 	init_col(cub);
 	init_sma(cub, av);
 	smap_map(cub);
+	if (cub->map->he > HEIGHT)
+		get_out_s(cub, "map to big\n");
 	init_texture(cub);
 	init_mx(cub);
 }

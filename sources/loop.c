@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 21:42:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 20:20:19 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:53:10 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ void	loop(t_cub *cub)
 	int		y;
 
 	y = 0;
-	while (cub->map->map[y])
+	while (cub->map->map[y] && y <= HEIGHT)
 	{
 		x = -1;
 		while (cub->map->map[y][++x])
 		{
+			if (x > WIDTH)
+				break ;
 			if (cub->map->map[y][x] == '1')
 				mlx_put_pixel(cub->mx->img, x, y, 0xFFFFFFFF);
 			else if (cub->map->map[y][x] == '0' || cub->map->map[y][x] == 'L')

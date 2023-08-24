@@ -21,6 +21,7 @@ SOURCES_LIST =	cast.c \
 				cub3D.c \
 				door.c \
 				face_path.c \
+				free_all.c \
 				get_out.c \
 				get_rgba.c \
 				init_texture.c \
@@ -33,7 +34,6 @@ SOURCES_LIST =	cast.c \
 				selections.c \
 				smap_map.c \
 				tot.c \
-				free_all.c \
 				wall_coll_check.c \
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
@@ -41,8 +41,8 @@ SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 LIBFT_DIRECTORY =	libft/
 LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_clean.c \
-						ft_itoa.c \
 						ft_is.c \
+						ft_itoa.c \
 						ft_lstadd_back.c \
 						ft_lstclear.c \
 						ft_lstlast.c \
@@ -50,6 +50,7 @@ LIBFT_SOURCES_LIST =	ft_atoi.c \
 						ft_lstsize.c \
 						ft_putchar_fd.c \
 						ft_putstr_fd.c \
+						ft_strchr.c \
 						ft_strdup.c \
 						ft_strjoin.c \
 						ft_strlen.c \

@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:25:05 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 16:01:23 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/24 20:02:44 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	select_i(t_cub *cub, char *lin)
 {
-	if (!ft_strncmp(lin, "F ", 2))
+	if (!ft_strncmp(lin, "F ", 2) && is_col(lin + 2))
 		return (0);
-	if (!ft_strncmp(lin, "C ", 2))
+	if (!ft_strncmp(lin, "C ", 2) && is_col(lin + 2))
 		return (1);
 	get_out_s(cub, "Nice Try\n");
 	return (0);
@@ -54,7 +54,7 @@ void	color_set(t_cub *cub, char *lin)
 	while (*lin && *lin != ',')
 		lin++;
 	color_check(cub, rgb);
-	if (*lin)
+	if (*lin || ft_strchr(lin, ','))
 		get_out_s(cub, "Too many ,\n");
 	if (*co[i])
 		get_out_s(cub, "Colors Can be set one time\n");

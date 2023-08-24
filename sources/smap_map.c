@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   smap_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 22:43:08 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/21 16:11:24 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/24 12:55:14 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,17 @@ double	select_dir(char p)
 	return (0);
 }
 
+void	set_player(t_cub *cub, t_smap *sma, int x, int y)
+{
+	if (cub->px || cub->py)
+		get_out_s(cub, "Only one player allowed\n");
+	cub->px = (x * XFA) + (XFA / 2);
+	cub->py = (y * XFA) + (XFA / 2);
+	cub->pan = select_dir(sma->s[x]);
+	cub->pdx = cos(cub->pan) * 5;
+	cub->pdy = sin(cub->pan) * 5;
+}
+
 void	get_playerp(t_cub *cub)
 {
 	t_smap	*sma;
@@ -64,17 +75,8 @@ void	get_playerp(t_cub *cub)
 	{
 		x = -1;
 		while (sma->s[++x])
-		{
 			if (ft_isplayer(sma->s[x]))
-			{
-				cub->px = (x * XFA) + (XFA / 2);
-				cub->py = (y * XFA) + (XFA / 2);
-				cub->pan = select_dir(sma->s[x]);
-				cub->pdx = cos(cub->pan) * 5;
-				cub->pdy = sin(cub->pan) * 5;
-				return ;
-			}
-		}
+				set_player(cub, sma, x, y);
 		sma = sma->nxt;
 		y++;
 	}
