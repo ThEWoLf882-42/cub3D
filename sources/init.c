@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/23 11:19:27 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/24 16:35:18 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	init_sma(t_cub *cub, char *av)
 	cub->sma = NULL;
 	open_map(cub, av);
 	read_map(cub);
+	close(cub->fd);
 	clean_map(cub, cub->sma);
 	check_map(cub, cub->sma);
 }

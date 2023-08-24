@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:14:32 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 20:14:42 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/24 13:18:52 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
 	else
 		xt = (int)(cas->rx[text->x] * (text->wid / XFA)) % text->wid;
 	i = text->idx * text->wid + xt;
-	tmp = text->y ;
+	tmp = text->y;
 	while (tmp < text->y + text->yinc)
 	{
 		i = (text->idx * text->wid) + xt;
