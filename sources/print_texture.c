@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:14:32 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 20:14:42 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:55:37 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
 		xt = (int)(cas->ry[text->x] * (text->wid / XFA)) % text->wid;
 	else
 		xt = (int)(cas->rx[text->x] * (text->wid / XFA)) % text->wid;
-	i = text->idx * text->wid + xt;
 	tmp = text->y ;
 	while (tmp < text->y + text->yinc)
 	{
-		i = (text->idx * text->wid) + xt;
+		i = text->idx * text->wid + xt;
 		mlx_put_pixel(cub->mx->img, text->x, tmp, text->tex[i]);
 		tmp++;
 	}
