@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 12:47:48 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:48:39 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	init(t_cub *cub, char *av)
 	init_col(cub);
 	init_sma(cub, av);
 	smap_map(cub);
+	if (cub->map->he > HEIGHT)
+		get_out_s(cub, "map to big\n");
 	init_texture(cub);
 	init_mx(cub);
 }
