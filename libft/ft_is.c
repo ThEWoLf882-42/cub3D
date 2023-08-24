@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 17:49:11 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/10 15:38:16 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/24 11:48:10 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,21 @@ int	is_ascii(char c)
 	if (c == 47)
 		return (0);
 	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}
+
+int	is_col(char *c)
+{
+	int	i;
+
+	if (!c)
+		return (1);
+	i = -1;
+	while (c[++i]
+		&& ((c[i] >= '0' && c[i] <= '9') || c[i] == ',' || c[i] == ' '))
+		;
+	if (!c[i])
 		return (1);
 	return (0);
 }

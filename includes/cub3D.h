@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/23 13:15:34 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/24 11:54:42 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,8 @@ int				ft_isplayer(size_t c);
 int				is_ascii(char c);
 char			*ft_itoa(int n);
 char			*ft_strjoin(char *s1, char const *s2);
+int				is_col(char *c);
+char			*ft_strchr(const char *s, int c);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LIBFT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
