@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/26 11:16:32 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/26 11:19:40 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 	cas->dis[i] = sqrt((cas->rx[i] - cub->px) * (cas->rx[i] - cub->px)
 			+ (cas->ry[i] - cub->py) * (cas->ry[i] - cub->py));
 	cas->dis[i] = cas->dis[i] * cos(cas->ang[i] - cub->pan);
-	text.coh = (16 * HEIGHT) / cas->dis[i];
+	text.coh = (XFA * HEIGHT) / cas->dis[i];
 	cas->hs = text.coh + (HEIGHT / 2 - (text.coh / 2));
 	text.x = (i);
 	text.y = HEIGHT / 2 - (text.coh / 2);
