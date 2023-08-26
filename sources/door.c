@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   door.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:25:32 by fbelahse          #+#    #+#             */
-/*   Updated: 2023/08/23 10:54:48 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/26 11:31:09 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+
+void	l_to_d(char **map, int i)
+{
+	int	y;
+	int	x;
+
+	y = -1;
+	while (map[++y] && !i)
+	{
+		x = -1;
+		while (map[y][++x])
+			if (map[y][x] == 'L')
+				map[y][x] = 'D';
+	}
+}
 
 void	back(t_cub *cub, char **map)
 {
@@ -28,17 +43,11 @@ void	back(t_cub *cub, char **map)
 		if (x < 0)
 			x = -1;
 		while (++x < cub->px + 27.0)
-			if (x < ft_strlen(map[(int)y]) && map[(int)y][(int)x] == 'L')
+			if (y < cub->map->he
+				&& x < ft_strlen(map[(int)y]) && map[(int)y][(int)x] == 'L')
 				i = 1;
 	}
-	y = -1;
-	while (map[++y] && !i)
-	{
-		x = -1;
-		while (map[y][++x])
-			if (map[y][x] == 'L')
-				map[y][x] = 'D';
-	}
+	l_to_d(map, i);
 }
 
 void	door(void *par)
