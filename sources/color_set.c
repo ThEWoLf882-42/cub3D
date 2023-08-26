@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_set.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 14:25:05 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 11:55:59 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/24 20:02:44 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	color_set(t_cub *cub, char *lin)
 		lin++;
 	color_check(cub, rgb);
 	if (*lin || ft_strchr(lin, ','))
-		get_out_s(cub, "Tomany ,\n");
+		get_out_s(cub, "Too many ,\n");
 	if (*co[i])
 		get_out_s(cub, "Colors Can be set one time\n");
 	*co[i] = get_rgba(rgb[0], rgb[1], rgb[2], 255);

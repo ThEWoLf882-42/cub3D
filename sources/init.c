@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 14:48:39 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/24 20:03:05 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	init_sma(t_cub *cub, char *av)
 	cub->sma = NULL;
 	open_map(cub, av);
 	read_map(cub);
+	close(cub->fd);
 	clean_map(cub, cub->sma);
 	check_map(cub, cub->sma);
 }
