@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 11:54:42 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/26 11:05:16 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # define XFA 16
 # define NOR WIDTH
 # define MSTEP 2
-# define STEPS 0.09
+# define STEPS 0.06
 # define DISTP 2.0
 # define MSENS 120
 # define RSTEP 0.087266

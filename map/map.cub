@@ -3,8 +3,8 @@ SO ./textures/SO.png
 WE ./textures/WE.png
 EA ./textures/EA.png
 
-F 8, 12, 1
-C 38, 44, 46
+F 244,164,96
+C 230,230,250
 
         1111111111111111111111111
         1000000000110000001000001
