@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:14:32 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 14:55:37 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/26 10:59:40 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
 	while (tmp < text->y + text->yinc)
 	{
 		i = text->idx * text->wid + xt;
-		mlx_put_pixel(cub->mx->img, text->x, tmp, text->tex[i]);
+		if (tmp >= 0 && tmp <= HEIGHT)
+			mlx_put_pixel(cub->mx->img, text->x, tmp, text->tex[i]);
 		tmp++;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cast.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/23 13:28:51 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/26 11:15:04 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	draw_column(t_cub *cub, t_cas *cas, int i)
 			+ (cas->ry[i] - cub->py) * (cas->ry[i] - cub->py));
 	cas->dis[i] = cas->dis[i] * cos(cas->ang[i] - cub->pan);
 	text.coh = (16 * HEIGHT) / cas->dis[i];
-	if (text.coh > HEIGHT)
-		text.coh = HEIGHT;
 	cas->hs = text.coh + (HEIGHT / 2 - (text.coh / 2));
 	text.x = (i);
 	text.y = HEIGHT / 2 - (text.coh / 2);
