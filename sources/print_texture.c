@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:14:32 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/26 11:16:43 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/27 11:48:29 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	print_texture(t_cub *cub, t_cas *cas, t_text *text)
 	int		i;
 	float	tmp;
 
-	if (cas->side[text->x] == TOP || cas->side[text->x] == BOTTOM)
+	if (cas->side[text->x] == TOP || cas->side[text->x] == BOTTOM
+		|| cas->side[text->x] == DOORH)
 		xt = (int)(cas->ry[text->x] * (text->wid / XFA)) % text->wid;
 	else
 		xt = (int)(cas->rx[text->x] * (text->wid / XFA)) % text->wid;

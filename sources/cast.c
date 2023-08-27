@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:06:57 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/26 11:19:40 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/27 11:46:36 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,8 @@ void	mini_loop(t_cub *cub, t_cas *cas)
 		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] != '1')
 			cas->side[i] = TOPBOTTOM;
 		if (cub->map->map[(int)cas->ry[i]][(int)cas->rx[i]] == 'D')
-			cas->side[i] = DOOR;
-		if (cas->rx[i] < 0 || cas->rx[i] >= WIDTH
-			|| cas->ry[i] < 0 || cas->ry[i] >= HEIGHT)
-			break ;
+			cas->side[i] = DOORH;
+		door_check(cub, cas, i);
 		if (wall_check(cub->map->map, cas, cas->rx[i] - cas->dx[i] * STEPS,
 				cas->ry[i] - cas->dy[i] * STEPS))
 			break ;
