@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/27 11:49:43 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/28 12:33:25 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define WIDTH 2560
 # define HEIGHT 1440
-# define XFA 16
+# define XFA 8
 # define NOR WIDTH
 # define MSTEP 1.5
 # define STEPS 0.09
