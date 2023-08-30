@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 12:00:04 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/26 11:05:16 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/29 15:50:49 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # define WIDTH 2560
 # define HEIGHT 1440
-# define XFA 16
+# define XFA 8
 # define NOR WIDTH
-# define MSTEP 2
-# define STEPS 0.06
+# define MSTEP 1
+# define STEPS 0.03
 # define DISTP 2.0
 # define MSENS 120
 # define RSTEP 0.087266
@@ -28,7 +28,8 @@
 # define RIGHT 4
 # define TOPBOTTOM 6
 # define LEFTRIGHT 7
-# define DOOR 8
+# define DOORV 8
+# define DOORH 9
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 69
 # endif
@@ -194,5 +195,6 @@ void			tot(void *par);
 void			print_texture(t_cub *cub, t_cas *cas, t_text *text);
 void			free_all(t_cub *cub);
 bool			wall_check(char **map, t_cas *cas, double ol_x, double ol_y);
+void			door_check(t_cub *cub, t_cas *cas, int i);
 
 #endif

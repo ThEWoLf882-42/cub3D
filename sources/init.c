@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 20:03:05 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/28 12:47:26 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	init_sma(t_cub *cub, char *av)
 
 void	init_mx(t_cub *cub)
 {
-	cub->mx->mlx = mlx_init(WIDTH, HEIGHT, "cube3D", false);
+	cub->mx->mlx = mlx_init(WIDTH, HEIGHT, "cub3D", false);
 	cub->mx->img = mlx_new_image(cub->mx->mlx, WIDTH, HEIGHT);
 	mlx_image_to_window(cub->mx->mlx, cub->mx->img, 0, 0);
 }
@@ -59,7 +59,7 @@ void	init(t_cub *cub, char *av)
 	init_sma(cub, av);
 	smap_map(cub);
 	if (cub->map->he > HEIGHT)
-		get_out_s(cub, "map to big\n");
+		get_out_s(cub, "Map to big\n");
 	init_texture(cub);
 	init_mx(cub);
 }

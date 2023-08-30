@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:04:10 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 20:19:08 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/27 11:47:13 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	texture_select_c(t_cub *cub, t_cas *cas, t_text *text)
 {
-	if (cas->side[text->x] == DOOR)
+	if (cas->side[text->x] == DOORH || cas->side[text->x] == DOORV)
 	{
 		text->tex = cub->mx->tdo;
 		text->wid = cub->mx->door->width;

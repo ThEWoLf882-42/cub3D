@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 21:42:39 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/24 14:53:10 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/29 18:20:58 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	loop(t_cub *cub)
 			else if (cub->map->map[y][x] == '0' || cub->map->map[y][x] == 'L')
 				mlx_put_pixel(cub->mx->img, x, y, 0x00000000);
 			else if (cub->map->map[y][x] == 'D')
-				mlx_put_pixel(cub->mx->img, x, y, 0x0005E1FF);
+				mlx_put_pixel(cub->mx->img, x, y, 0xAF5069FF);
 		}
 		y++;
 	}

@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:25:32 by fbelahse          #+#    #+#             */
-/*   Updated: 2023/08/30 12:10:23 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:11:29 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ void	back(t_cub *cub, char **map)
 	int	y;
 	int	i;
 
-	y = cub->py - 27.0;
+	y = cub->py - (XFA + ((int)cub->py % XFA));
 	i = 0;
 	if (y < 0)
 		y = -1;
-	while (++y < cub->py + 27.0)
+	while (++y < cub->py + (XFA + ((int)cub->py % XFA)))
 	{
-		x = cub->px - 27.0;
+		x = cub->px - (XFA + ((int)cub->px % XFA));
 		if (x < 0)
 			x = -1;
-		while (++x < cub->px + 27.0)
+		while (++x < cub->px + (XFA + ((int)cub->px % XFA)))
 			if (y < cub->map->he
 				&& x < ft_strlen(map[(int)y]) && map[(int)y][(int)x] == 'L')
 				i = 1;
@@ -57,20 +57,20 @@ void	door(void *par)
 	double	y;
 
 	cub = par;
-	y = cub->py - 27.0;
+	y = cub->py - (XFA + ((int)cub->py % XFA));
 	if (y < 0)
 		y = -1;
 	back(cub, cub->map->map);
 	if (mlx_is_mouse_down(cub->mx->mlx, MLX_MOUSE_BUTTON_LEFT))
 	{
-		while (++y < cub->py + 27.0)
+		while (++y < cub->py + (XFA + ((int)cub->py % XFA)))
 		{
-			x = cub->px - 27.0;
+			x = cub->px - (XFA + ((int)cub->px % XFA));
 			if (x < 0)
 				x = -1;
-			while (++x < cub->px + 27.0)
-				if (y < cub->map->he && 
-					cub->map->map[(int)y][(int)x] == 'D')
+			while (y < cub->map->he
+				&& ++x < cub->px + (XFA + ((int)cub->px % XFA)))
+				if (cub->map->map[(int)y][(int)x] == 'D')
 					cub->map->map[(int)y][(int)x] = 'L';
 		}
 	}
