@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
+/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 13:03:34 by agimi             #+#    #+#             */
-/*   Updated: 2023/07/31 10:49:27 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/26 13:52:58 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	trim_space(t_smap *smap)
 		if (sma->nxt && sma->nxt->nxt
 			&& ft_sisspace(sma->nxt->s) && ft_sisspace(sma->nxt->nxt->s))
 		{
+			printf ("hi idk broski Im so done ong\n");
 			tsma = sma->nxt;
 			sma->nxt = sma->nxt->nxt;
 			free(tsma->s);
