@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:29:50 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/30 12:48:29 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/30 13:24:43 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ int	mv_tst(char **map, int x, int y)
 
 void	set_xy(t_cub *cub, char **map, double dx, double dy)
 {
-	if (mv_tst(map, cub->px + (dx * 3), cub->py)
-		&& mv_tst(map, cub->px, cub->py + (dy * 3)))
+	if (cub->px + (dx * SP) > ft_strlen(map[(int)cub->py])
+		|| cub->py + (dy * SP) > cub->map->he)
+		return ;
+	if (mv_tst(map, cub->px + (dx * SP), cub->py)
+		&& mv_tst(map, cub->px, cub->py + (dy * SP)))
 	{
 		cub->px += dx;
 		cub->py += dy;
