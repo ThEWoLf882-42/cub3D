@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:44:41 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/28 12:47:26 by agimi            ###   ########.fr       */
+/*   Updated: 2023/08/30 15:35:08 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	init_mx(t_cub *cub)
 	cub->mx->mlx = mlx_init(WIDTH, HEIGHT, "cub3D", false);
 	cub->mx->img = mlx_new_image(cub->mx->mlx, WIDTH, HEIGHT);
 	mlx_image_to_window(cub->mx->mlx, cub->mx->img, 0, 0);
+	mlx_set_mouse_pos(cub->mx->mlx, WIDTH / 2, HEIGHT / 2);
 }
 
 void	init(t_cub *cub, char *av)
