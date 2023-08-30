@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:29:50 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 18:44:28 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:07:29 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	mv_tst(char **map, int x, int y)
 
 void	set_xy(t_cub *cub, char **map, double dx, double dy)
 {
-	if (mv_tst(map, cub->px + dx, cub->py)
-		&& mv_tst(map, cub->px, cub->py + dy))
+	if (mv_tst(map, cub->px + (dx * 2), cub->py)
+		&& mv_tst(map, cub->px, cub->py + (dy * 2)))
 	{
 		cub->px += dx;
 		cub->py += dy;
