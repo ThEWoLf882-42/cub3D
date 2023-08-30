@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:25:32 by fbelahse          #+#    #+#             */
-/*   Updated: 2023/08/30 12:11:29 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:46:01 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	door(void *par)
 			x = cub->px - (XFA + ((int)cub->px % XFA));
 			if (x < 0)
 				x = -1;
-			while (y < cub->map->he
+			while (y < cub->map->he && x < ft_strlen(cub->map->map[(int)y])
 				&& ++x < cub->px + (XFA + ((int)cub->px % XFA)))
 				if (cub->map->map[(int)y][(int)x] == 'D')
 					cub->map->map[(int)y][(int)x] = 'L';

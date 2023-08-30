@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 22:43:08 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/26 10:59:17 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:44:55 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	smap_map(t_cub *cub)
 		sma = sma->nxt;
 	}
 	map[i] = NULL;
-	cub->map->he = i;
+	cub->map->he = i - 1;
 	cub->map->map = map;
 	get_playerp(cub);
 	if (!cub->px || !cub->py)
