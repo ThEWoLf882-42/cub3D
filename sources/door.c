@@ -6,7 +6,7 @@
 /*   By: fbelahse <fbelahse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:25:32 by fbelahse          #+#    #+#             */
-/*   Updated: 2023/08/27 08:55:21 by fbelahse         ###   ########.fr       */
+/*   Updated: 2023/08/30 11:11:50 by fbelahse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	door(void *par)
 			if (x < 0)
 				x = -1;
 			while (++x < cub->px + 27.0)
-				if (cub->map->map[(int)y][(int)x] == 'D')
+				if (y < cub->map->he && cub->map->map[(int)y][(int)x] == 'D')
 					cub->map->map[(int)y][(int)x] = 'L';
 		}
 	}
