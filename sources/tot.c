@@ -6,7 +6,7 @@
 /*   By: agimi <agimi@student.1337.ma>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 19:45:53 by agimi             #+#    #+#             */
-/*   Updated: 2023/08/22 20:07:22 by agimi            ###   ########.fr       */
+/*   Updated: 2023/10/29 19:59:41 by agimi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	tot(void *par)
 	mlx_delete_image(cub->mx->mlx, img);
 	if (s % 3 == 0)
 		i++;
+	if (i == 38)
+		i = 0;
 	img = mlx_texture_to_image(cub->mx->mlx, cub->mx->tot[i]);
 	mlx_image_to_window(cub->mx->mlx, img, 2290, 72);
 	s++;
-	if (i == 38)
-		i = 0;
 	if (s == 3 * 38)
 		s = 0;
 }
